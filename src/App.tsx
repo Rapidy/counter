@@ -1,12 +1,16 @@
 import React from 'react';
-import { Counter } from './features/components/counter/Counter';
+import { Route, Routes } from 'react-router-dom';
 import css from './App.module.scss';
+
+import { Counter } from './features/components/counter/Counter';
 
 function App() {
   return (
     <div className={css.root}>
       <header className={css.header}>
-        <Counter />
+        <Routes location="/">
+          <Route index element={<Counter />} />
+        </Routes>
       </header>
     </div>
   );
