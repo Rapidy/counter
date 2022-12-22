@@ -2,22 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87283aea-6755-45a8-b4af-fd7b48ec976e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/App.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reportWebVitals.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/robots.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/counter/Counter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/counter/Counter.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/counter/Counter.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/counter/counterAPI.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/counter/counterSlice.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fonts/Ubuntu-Light.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fonts/Ubuntu-Medium.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fonts/Ubuntu-Regular.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/components/counter/Counter.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/counter/Counter.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +21,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2JHTrxfnIwPQDX6SLvHTgDb1Zqt" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -50,6 +42,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Rapidy\Documents\GitHub\counter\src\fonts" />
       <recent name="C:\Users\Rapidy\Documents\GitHub\counter\src\features\components" />
     </key>
   </component>
@@ -61,7 +54,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671734211662</updated>
-      <workItem from="1671734214718" duration="1523000" />
+      <workItem from="1671734214718" duration="2504000" />
     </task>
     <servers />
   </component>
