@@ -1,11 +1,12 @@
-$white: #fff;
-$black: #000;
-$lightRed: #ef4162;
-$lightPurple: #958ab5;
+$text: #b3b3b3;
+$black: #3f3f3f;
+$accent: #ef4162;
 $lightGrey: #f0f1f5;
 $grey: #d6d2e1;
-$purple: #897cb1;
-$darkPurple: #5d5378;
+$bg: #897cb1;
+$lightBg: #e5e1f2;
+$darkBg: #4f4663;
+$border: #e8e8ea;
+$button: #8a7db3;
 
-$very-dark-grayish-blue-violet_gradient: linear-gradient(180deg, rgba(62,57,80,1) 0%, rgba(85,75,109,1) 100%);
-$very-dark-grayish-violet_gradient: linear-gradient(180deg, rgba(83,69,95,1) 0%, rgba(79,70,99,1) 100%); 
+$bgGradient: linear-gradient(180deg, darken($darkBg, 10%) 0%, lighten($darkBg, 5%) 100%);
