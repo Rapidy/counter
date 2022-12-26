@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
-import { useAppSelector, useAppDispatch } from '../../../app/hooks';
+import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 import {
   decrement,
   increment,
-  incrementByAmount,
   incrementAsync,
+  incrementByAmount,
   incrementIfOdd,
-  selectCount,
+  selectCount
 } from './counterSlice';
 import css from './Counter.module.scss';
 

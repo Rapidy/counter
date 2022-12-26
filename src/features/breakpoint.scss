@@ -1,8 +1,8 @@
-$desktop-19: only screen and (max-width: 1440px);
-$desktop-12: only screen and (max-width: 1024px);
+$desktop: only screen and (max-width: 1440px);
+$notebook: only screen and (max-width: 1024px);
 
-$tablet-ipad-mini: only screen and (max-width: 768px);
-$tablet-nexus-7: only screen and (max-width: 600px);
+$tablet: only screen and (max-width: 768px);
+$tabletSmall: only screen and (max-width: 600px);
 
-$mobile-lg: only screen and (max-width: 480px);
-$mobile-iphone-xs: only screen and (max-width: 375px);
+$mobileLarge: only screen and (max-width: 480px);
+$mobile: only screen and (max-width: 375px);
