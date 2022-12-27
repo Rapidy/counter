@@ -9,13 +9,17 @@ import { users } from './app/mocks/mocks';
 
 function App() {
   return (
-    <div>
-      <Routes location="/">
-        <Route
-          index
-          element={<UserList users={users} listName="Счетчик 1" />}
-        />
-      </Routes>
+    <div className={css.root}>
+      <div className={css.container}>
+        <div className={css.wrapper}>
+          <Routes location="/">
+            <Route
+              index
+              element={<UserList users={users} listName="Счетчик 1" />}
+            />
+          </Routes>
+        </div>
+      </div>
     </div>
   );
 }
