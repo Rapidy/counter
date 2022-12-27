@@ -1,0 +1,41 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 250px;
+
+  &:not(:last-of-type) {
+    margin-bottom: 5px;
+  }
+}
+
+.info {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.noAvatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  mix-blend-mode: difference;
+  color: #fff;
+}
+
+.totalAmount {
+  margin-left: 12px;
+  font-weight: 400;
+}
+
+button.deleteButton {
+  background: #000;
+  color: #fff;
+}
