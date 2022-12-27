@@ -1,2 +1,26 @@
+@import "features/variables";
+
+.root {
+  background: $mainBg;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 100px auto;
+  width: 100%;
+  height: calc(100% - 200px);
+}
+
+.wrapper {
+  background: $lightGrey;
+  box-shadow: 0 0 85px 20px rgba($bg, .35);
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
 
 
