@@ -33,33 +33,13 @@ export const counters = [
     name: 'counter1',
     index: 1,
     totalAmount: 1100,
-    users: [
-      {
-        id: '1',
-        name: 'Sashka',
-        avatarUrl: 'https://i.pinimg.com/originals/0a/dd/87/0add874e1ea0676c4365b2dd7ddd32e3.jpg',
-        totalAmount: 500
-      },
-      {
-        id: '2',
-        name: 'Nikitka',
-        avatarUrl: 'https://a.d-cd.net/9c1d81u-960.jpg',
-        totalAmount: 600
-      },
-    ]
+    users
   },
   {
     id: '2',
     name: 'counter2',
     index: 2,
     totalAmount: 500,
-    users: [
-      {
-        id: '1',
-        name: 'Sashka',
-        avatarUrl: 'https://i.pinimg.com/originals/0a/dd/87/0add874e1ea0676c4365b2dd7ddd32e3.jpg',
-        totalAmount: 500
-      },
-    ]
+    users
   }
 ];

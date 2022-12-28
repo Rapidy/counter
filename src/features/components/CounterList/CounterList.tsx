@@ -16,23 +16,17 @@ const CounterList: React.FC<Props> = ({ counters }) => {
     console.log('updateNameCounter', {counterId, name});
   };
 
-  const inviteUserCounter = (counterId: string, inviteUserId: string) => {
-    console.log('inviteUserCounter', {counterId, inviteUserId});
-  };
-
-
   return (
     <div>
       {counters.map((counter) => (
         <CounterItem
-          key={counter.index}
+          key={counter.id}
           id={counter.id}
           name={counter.name}
           totalAmount={counter.totalAmount}
           users={counter.users}
           onDeleteCounter={handleDeleteCounter}
           onUpdateNameCounter={updateNameCounter}
-          inviteUserCounter={inviteUserCounter}
         />
       ))}
     </div>
