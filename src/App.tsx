@@ -4,8 +4,9 @@ import css from './App.module.scss';
 
 import { Counter } from './features/components/counter/Counter';
 import UserList from './features/components/UsersList/UserList';
+import CounterList from './features/components/CounterList/CounterList';
 
-import { users } from './app/mocks/mocks';
+import { users, counters } from './app/mocks/mocks';
 
 function App() {
   return (
@@ -15,7 +16,10 @@ function App() {
           <Routes location="/">
             <Route
               index
-              element={<UserList users={users} listName="Счетчик 1" />}
+              element={<>
+                <UserList users={users} listName="Счетчик 1" />
+                <CounterList counters={counters} />
+              </>}
             />
           </Routes>
         </div>
