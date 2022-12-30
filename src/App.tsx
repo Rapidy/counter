@@ -7,8 +7,18 @@ import UserList from './features/components/UsersList/UserList';
 import CounterList from './features/components/CounterList/CounterList';
 
 import { users, counters } from './app/mocks/mocks';
+import { getUsers, setUsers } from './app/redux/slices/userSlice';
+import { useAppDispatch, useAppSelector } from './app/hooks';
 
 function App() {
+  const dispatch = useAppDispatch();
+
+  React.useEffect(() => {
+    dispatch(setUsers(users));
+  }, []);
+
+  const userList = useAppSelector(getUsers);
+
   return (
     <div className={css.root}>
       <div className={css.container}>
@@ -16,10 +26,12 @@ function App() {
           <Routes location="/">
             <Route
               index
-              element={<>
-                <UserList users={users} listName="Счетчик 1" />
-                <CounterList counters={counters} />
-              </>}
+              element={
+                <>
+                  <UserList users={userList} listName="Счетчик 1" />
+                  <CounterList counters={counters} />
+                </>
+              }
             />
           </Routes>
         </div>
