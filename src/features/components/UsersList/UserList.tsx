@@ -1,7 +1,10 @@
 import React from 'react';
 import { User } from '../../../app/types';
-import UserItem from './UserItem/UserItem';
 import { getRandomColor } from '../../../app/utils';
+import { useAppDispatch } from '../../../app/hooks';
+import { removeUser } from '../../../app/redux/slices/userSlice';
+
+import UserItem from './UserItem/UserItem';
 
 interface Props {
   users: User[];
@@ -9,13 +12,16 @@ interface Props {
 }
 
 const UserList: React.FC<Props> = ({ users, listName }) => {
+  const dispatch = useAppDispatch();
+
   const handleDeleteUser = (id: string) => {
-    console.log(id);
+    dispatch(removeUser(id));
   };
 
   const randomAvatarBackground = getRandomColor();
-
-  const sortedUserList = users.sort((a, b) => b.totalAmount - a.totalAmount);
+  const sortedUserList = [...users].sort(
+    (a, b) => b.totalAmount - a.totalAmount
+  );
 
   return (
     <div>
