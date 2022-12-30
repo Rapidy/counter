@@ -12,8 +12,8 @@ const CounterList: React.FC<Props> = ({ counters }) => {
     console.log('handleDeleteCounter', {counterId});
   };
 
-  const updateNameCounter = (counterId: string, name: string) => {
-    console.log('updateNameCounter', {counterId, name});
+  const handleRenameCounter = (counterId: string, name: string) => {
+    console.log('handleRenameCounter', {counterId, name});
   };
 
   return (
@@ -23,10 +23,8 @@ const CounterList: React.FC<Props> = ({ counters }) => {
           key={counter.id}
           id={counter.id}
           name={counter.name}
-          totalAmount={counter.totalAmount}
-          users={counter.users}
           onDeleteCounter={handleDeleteCounter}
-          onUpdateNameCounter={updateNameCounter}
+          onRenameCounter={handleRenameCounter}
         />
       ))}
     </div>
