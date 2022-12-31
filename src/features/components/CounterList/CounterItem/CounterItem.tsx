@@ -17,8 +17,10 @@ const CounterItem: React.FC<Props & Counter> = ({
 
   const onRename = () => {
     setEditing(false);
-    if(newName !== name && newName.trim().length !== 0) {
-      onRenameCounter(id, newName);
+    if(newName.trim().length) {
+      if (newName !== name) {
+        onRenameCounter(id, newName);
+      }
     } else {
       setNewName(name);
     }
