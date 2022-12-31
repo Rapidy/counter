@@ -8,6 +8,4 @@ export interface User {
 export interface Counter {
   id: string;
   name: string;
-  totalAmount: number,
-  users: User[];
 }

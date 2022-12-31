@@ -1,5 +1,8 @@
 import React from 'react';
 import { Counter } from '../../../app/types';
+import { useAppDispatch } from '../../../app/hooks';
+import { removeCounter, renameCounter } from '../../../app/redux/slices/counterSlice';
+
 import CounterItem from './CounterItem/CounterItem';
 
 interface Props {
@@ -7,13 +10,14 @@ interface Props {
 }
 
 const CounterList: React.FC<Props> = ({ counters }) => {
+  const dispatch = useAppDispatch();
 
   const handleDeleteCounter = (counterId: string) => {
-    console.log('handleDeleteCounter', {counterId});
+    dispatch(removeCounter(counterId));
   };
 
-  const updateNameCounter = (counterId: string, name: string) => {
-    console.log('updateNameCounter', {counterId, name});
+  const handleRenameCounter = (id: string, name: string) => {
+    dispatch(renameCounter({id, name}));
   };
 
   return (
@@ -23,10 +27,8 @@ const CounterList: React.FC<Props> = ({ counters }) => {
           key={counter.id}
           id={counter.id}
           name={counter.name}
-          totalAmount={counter.totalAmount}
-          users={counter.users}
           onDeleteCounter={handleDeleteCounter}
-          onUpdateNameCounter={updateNameCounter}
+          onRenameCounter={handleRenameCounter}
         />
       ))}
     </div>
