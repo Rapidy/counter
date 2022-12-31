@@ -12,31 +12,44 @@ const CounterItem: React.FC<Props & Counter> = ({
   onDeleteCounter,
   onRenameCounter,
 }) => {
-  const [rename, setRename] = useState(false);
+  const [isEditing, setEditing] = useState(false);
   const [newName, setNewName] = useState(name);
 
   const onRename = () => {
-    setRename(false);
-    if(newName !== name) {
+    setEditing(false);
+    if(newName !== name && newName.trim().length !== 0) {
       onRenameCounter(id, newName);
+    } else {
+      setNewName(name);
+    }
+  }
+
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setNewName(e.target.value);
+  }
+
+  const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      onRename();
     }
   }
 
   return <div>
     <div>
-      {rename
+      {isEditing
         ? <input type="text"
             value={newName}
-            onChange={(e) => setNewName(e.target.value)}
+            onChange={onChange}
             autoFocus={true}
-            onKeyDown={(e) => e.keyCode === 13 && onRename()}
+            onKeyDown={onKeyDown}
             onBlur={onRename}
+            required
           />
         : name
       }
     </div>
     <button onClick={()=> onDeleteCounter(id)}>Удалить</button>
-    <button onClick={() => setRename(true)}>Изменить название</button>
+    <button onClick={() => setEditing(true)}>Изменить название</button>
   </div>;
 }
 

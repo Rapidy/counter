@@ -16,7 +16,7 @@ export const counterSlice = createSlice({
     removeCounter: (state, action: PayloadAction<string>) => {
       state.counters = state.counters.filter((counter) => counter.id !== action.payload);
     },
-    renameCounter: (state, action: PayloadAction<{id: string, name: string}>) => {
+    renameCounter: (state, action: PayloadAction<Counter>) => {
       state.counters = state.counters.map(counter => {
         if(counter.id === action.payload.id) {
           counter.name = action.payload.name;
