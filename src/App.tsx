@@ -8,6 +8,7 @@ import CounterList from './features/components/CounterList/CounterList';
 
 import { users, counters } from './app/mocks/mocks';
 import { getUsers, setUsers } from './app/redux/slices/userSlice';
+import { getCounters, setCounters } from './app/redux/slices/counterSlice';
 import { useAppDispatch, useAppSelector } from './app/hooks';
 
 function App() {
@@ -15,9 +16,11 @@ function App() {
 
   React.useEffect(() => {
     dispatch(setUsers(users));
+    dispatch(setCounters(counters));
   }, []);
 
   const userList = useAppSelector(getUsers);
+  const counterList = useAppSelector(getCounters);
 
   return (
     <div className={css.root}>
@@ -29,7 +32,7 @@ function App() {
               element={
                 <>
                   <UserList users={userList} listName="Счетчик 1" />
-                  <CounterList counters={counters} />
+                  <CounterList counters={counterList} />
                 </>
               }
             />
