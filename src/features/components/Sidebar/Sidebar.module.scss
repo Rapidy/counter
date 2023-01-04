@@ -1,0 +1,21 @@
+@import '../../variables';
+
+.wrapper {
+  width: 320px;
+  background: $bgGradient;
+  padding: 40px 35px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 25px;
+  font-weight: 300;
+  margin-bottom: 35px;
+}
+
+button.createCounter {
+  margin-bottom: 40px;
+}
