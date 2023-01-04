@@ -26,3 +26,14 @@ export const users = [
     totalAmount: 800
   }
 ];
+
+export const counters = [
+  {
+    id: '1',
+    name: 'counter1'
+  },
+  {
+    id: '2',
+    name: 'counter2'
+  }
+];
