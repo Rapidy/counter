@@ -22,7 +22,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route
-          path="/:id"
+          path="counter/:id"
           element={<UserList users={userList} listName="Счетчик" />}
         />
       </Route>
