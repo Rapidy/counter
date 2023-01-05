@@ -37,3 +37,24 @@ export const counters = [
     name: 'counter2'
   }
 ];
+
+export const logs = [
+  {
+    username: 'Sashka',
+    type: 1,
+    description: '300',
+    date: 1672947710
+  },
+  {
+    username: 'Nikitka',
+    type: 2,
+    description: '300',
+    date: 1672947925
+  },
+  {
+    username: 'Artopka',
+    type: 3,
+    description: 'invitation',
+    date: 1672947925
+  },
+];
