@@ -1,13 +1,15 @@
 import React from 'react';
-import Sidebar from '../Sidebar/Sidebar';
+import css from './Layout.module.scss';
+import { Outlet } from 'react-router-dom';
 import { counters } from '../../../app/mocks/mocks';
 import {
   getCounters,
   setCounters
 } from '../../../app/redux/slices/counterSlice';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
-import { Outlet } from 'react-router-dom';
-import css from './Layout.module.scss';
+
+import Sidebar from '../Sidebar/Sidebar';
+import Header from '../Header/Header';
 
 const Layout: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -21,8 +23,9 @@ const Layout: React.FC = () => {
   return (
     <div className={css.root}>
       <div className={css.container}>
+        <Sidebar counters={counterList} />
         <div className={css.wrapper}>
-          <Sidebar counters={counterList} />
+          <Header />
 
           <Outlet />
         </div>
