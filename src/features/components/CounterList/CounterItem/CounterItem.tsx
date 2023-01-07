@@ -48,7 +48,7 @@ const CounterItem: React.FC<Props & Counter> = ({
 
   return (
     <NavLink
-      to={id}
+      to={`counter/${id}`}
       className={cn(css.wrapper, { [css.active]: isActive })}
       onClick={() => onClickCounter(id)}
     >
