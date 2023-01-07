@@ -10,12 +10,14 @@
 .container {
   max-width: 1400px;
   margin: 100px auto;
+  width: 100%;
   height: calc(100% - 200px);
-  box-shadow: 0 0 85px 20px rgba($bg, .35);
-  display: flex;
 }
 
 .wrapper {
   background: $lightGrey;
-  width: calc(100% - 320px);
+  box-shadow: 0 0 85px 20px rgba($bg, .35);
+  height: 100%;
+  width: 100%;
+  display: flex;
 }
