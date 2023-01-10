@@ -40,21 +40,90 @@ export const counters = [
 
 export const logs = [
   {
-    username: 'Sashka',
-    type: 1,
-    description: '300',
-    date: 1672947710
-  },
-  {
-    username: 'Nikitka',
+    user: users[2],
     type: 2,
-    description: '300',
-    date: 1672947925
+    date: new Date(2023, 1, 4, 3, 24, 1)
   },
   {
-    username: 'Artopka',
-    type: 3,
-    description: 'invitation',
-    date: 1672947925
+    user: users[0],
+    type: 0,
+    amount: 500,
+    date: new Date(2023, 1, 4, 3, 24, 2)
   },
+  {
+    user: users[3],
+    type: 4,
+    date: new Date(2023, 1, 5, 3, 24, 3)
+  },
+  {
+    user: users[1],
+    type: 1,
+    amount: 200,
+    date: new Date(2023, 1, 5, 3, 24, 4)
+  },
+  {
+    user: users[2],
+    type: 2,
+    date: new Date(2023, 1, 5, 3, 24, 5)
+  },
+  {
+    user: users[1],
+    type: 1,
+    amount: 200,
+    date: new Date(2023, 1, 5, 3, 24, 6)
+  },
+  {
+    user: users[1],
+    type: 1,
+    amount: 200,
+    date: new Date(2023, 1, 5, 3, 24, 7)
+  },
+  {
+    user: users[1],
+    type: 1,
+    amount: 200,
+    date: new Date(2023, 1, 5, 3, 24, 8)
+  },
+  {
+    user: users[0],
+    type: 0,
+    amount: 500,
+    date: new Date(2023, 1, 5, 3, 24, 9)
+  },
+  {
+    user: users[0],
+    type: 0,
+    amount: 500,
+    date: new Date(2023, 1, 5, 3, 24, 10)
+  },
+  {
+    user: users[0],
+    type: 0,
+    amount: 500,
+    date: new Date(2023, 1, 5, 3, 24, 11)
+  },
+  {
+    user: users[1],
+    type: 1,
+    amount: 200,
+    date: new Date(2023, 1, 6, 3, 24, 12)
+  },
+  {
+    user: users[1],
+    type: 1,
+    amount: 200,
+    date: new Date(2023, 1, 6, 3, 24, 13)
+  },
+  {
+    user: users[0],
+    type: 0,
+    amount: 500,
+    date: new Date(2023, 1, 6, 3, 24, 14)
+  },
+  {
+    user: users[0],
+    type: 0,
+    amount: 500,
+    date: new Date(2023, 1, 6, 3, 4, 15)
+  }
 ];

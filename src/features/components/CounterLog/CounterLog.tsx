@@ -5,21 +5,53 @@ import { Log } from '../../../app/types';
 import CounterLogItem from './CounterLogItem/CounterLogItem';
 
 interface Props {
-  logs: Log[]
+  logs: Log[];
 }
 
 const CounterLog: React.FC<Props> = ({ logs }) => {
-  return <div>
-    {logs.map((log) => (
-      <CounterLogItem
-        key={`${log.username}_${log.date}`}
-        username={log.username}
-        type={log.type}
-        description={log.description}
-        date={log.date}
-      />
-    ))}
-  </div>;
+  const ref = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    ref.current?.scrollIntoView({ behavior: 'auto' });
+  }, [logs]);
+
+  let isDate = '';
+
+  const createDateElement = (date: Date) => {
+    if (isDate === '' || isDate !== date.toLocaleDateString()) {
+      isDate = date.toLocaleDateString();
+      return (
+        <div className={css.isDate}>
+          <span>{date.toLocaleDateString()}</span>
+        </div>
+      );
+    }
+    return null;
+  };
+
+  const logsReverse = [...logs].reverse();
+
+  return (
+    <div className={css.container}>
+      <div className={css.wrapper}>
+        {logsReverse.map((log) => {
+          const element = createDateElement(log.date);
+          return (
+            <CounterLogItem
+              key={`${log.user.id}_${log.date.toJSON()}`}
+              user={log.user}
+              type={log.type}
+              amount={log.amount}
+              date={log.date}
+            >
+              {element}
+            </CounterLogItem>
+          );
+        })}
+        <div ref={ref} />
+      </div>
+    </div>
+  );
 };
 
 export default CounterLog;

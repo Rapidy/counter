@@ -10,9 +10,19 @@ export interface Counter {
   name: string;
 }
 
+export enum logType {
+  AddAmount,
+  SubstrAmount,
+  Invite,
+  Accept,
+  Kick,
+  SetGoal,
+  ReachGoal
+}
+
 export interface Log {
-  username: string;
-  type: number;
-  description: string;
-  date: number;
+  user: User;
+  type: logType;
+  amount?: number;
+  date: Date;
 }
