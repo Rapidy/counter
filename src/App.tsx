@@ -32,7 +32,7 @@ function App() {
           path="counter/:id"
           element={
             <>
-              <UserList users={userList} listName="Счетчик" />{' '}
+              <UserList users={userList} listName="Счетчик" />
               <CounterLog logs={counterLog} />
             </>
           }
