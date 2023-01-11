@@ -8,3 +8,10 @@ export const getRandomColor = () => {
 
   return color;
 };
+
+export const numberFormatting = (n: number) => {
+  return `${n}`.replace(
+    /(?:(^\d{1,3})(?=(?:\d{3})*$)|(\d{3}))(?!$)/gm,
+    '$1$2.'
+  );
+};
