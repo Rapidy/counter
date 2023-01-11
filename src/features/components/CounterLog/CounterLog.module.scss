@@ -11,20 +11,6 @@
   height: 100%;
   padding: 15px 15px 10px 0;
   overflow-y: auto;
-
-  &::-webkit-scrollbar {
-    width: 9px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: $bg;
-    border-radius: 100px;
-  }
-
-  &::-webkit-scrollbar-button {
-    width: 9px;
-    height: 10px;
-  }
 }
 
 .isDate {
