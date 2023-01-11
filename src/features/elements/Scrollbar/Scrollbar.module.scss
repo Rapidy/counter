@@ -1,0 +1,18 @@
+@import '../../variables';
+
+.scrollbar {
+  &::-webkit-scrollbar {
+    width: 9px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $bg;
+    border-radius: 100px;
+  }
+
+  &::-webkit-scrollbar-button {
+    width: 9px;
+    height: 10px;
+    background-color: transparent;
+  }
+}
