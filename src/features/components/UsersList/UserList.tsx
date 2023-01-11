@@ -14,8 +14,11 @@ interface Props {
 const UserList: React.FC<Props> = ({ users, listName }) => {
   const dispatch = useAppDispatch();
 
+  const authorId = '1';
+
   const handleDeleteUser = (id: string) => {
-    dispatch(removeUser(id));
+    dispatch(removeUser({ id, authorId }));
+    console.log({ id, authorId });
   };
 
   const randomAvatarBackground = getRandomColor();
