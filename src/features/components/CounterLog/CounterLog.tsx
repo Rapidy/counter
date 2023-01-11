@@ -20,6 +20,7 @@ const CounterLog: React.FC<Props> = ({ logs }) => {
   const createDateElement = (date: Date) => {
     if (isDate === '' || isDate !== date.toLocaleDateString()) {
       isDate = date.toLocaleDateString();
+
       return (
         <div className={css.isDate}>
           <span>{date.toLocaleDateString()}</span>
@@ -29,13 +30,14 @@ const CounterLog: React.FC<Props> = ({ logs }) => {
     return null;
   };
 
-  const logsReverse = [...logs].reverse();
+  const reversedLogs = [...logs].reverse();
 
   return (
     <div className={css.container}>
       <div className={css.wrapper}>
-        {logsReverse.map((log) => {
-          const element = createDateElement(log.date);
+        {reversedLogs.map((log) => {
+          const dateElement = createDateElement(log.date);
+
           return (
             <CounterLogItem
               key={`${log.user.id}_${log.date.toJSON()}`}
@@ -44,7 +46,7 @@ const CounterLog: React.FC<Props> = ({ logs }) => {
               amount={log.amount}
               date={log.date}
             >
-              {element}
+              {dateElement}
             </CounterLogItem>
           );
         })}

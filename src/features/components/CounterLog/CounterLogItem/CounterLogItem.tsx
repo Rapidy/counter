@@ -37,15 +37,15 @@ const CounterLogItem: React.FC<Props & Log> = ({
     [css.red]: type === logType.SubstrAmount
   };
 
-  const myLogs: boolean = user.id === '3';
+  const isMine: boolean = user.id === '3';
   const noAvatarBackground = getRandomColor();
 
   return (
     <>
       {children}
-      <div className={cn(css.log, { [css.right]: myLogs })}>
+      <div className={cn(css.log, { [css.right]: isMine })}>
         <div className={css.wrapper}>
-          {!myLogs && (
+          {!isMine && (
             <div>
               {!!user.avatarUrl ? (
                 <img
@@ -64,7 +64,7 @@ const CounterLogItem: React.FC<Props & Log> = ({
             </div>
           )}
           <div className={cn(css.content, classType)}>
-            {!myLogs && <div className={css.username}>{user.name}</div>}
+            {!isMine && <div className={css.username}>{user.name}</div>}
             {text}
             <div className={css.date}>
               <span className={css.time}>{timeFormatting(date)}</span>
