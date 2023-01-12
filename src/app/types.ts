@@ -11,4 +11,3 @@ export interface Counter {
   totalAmount: number;
   users: User[];
 }
-

@@ -18,7 +18,6 @@ const UserList: React.FC<Props> = ({ users, listName }) => {
 
   const handleDeleteUser = (id: string) => {
     dispatch(removeUser({ id, authorId }));
-    console.log({ id, authorId });
   };
 
   const randomAvatarBackground = getRandomColor();

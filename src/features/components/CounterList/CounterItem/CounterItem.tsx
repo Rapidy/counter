@@ -61,7 +61,7 @@ const CounterItem: React.FC<Props & Counter> = ({
           autoFocus={true}
           onKeyDown={onKeyDown}
           onBlur={onRename}
-          required
+          required={true}
         />
       ) : (
         <p className={css.name}>{name}</p>
