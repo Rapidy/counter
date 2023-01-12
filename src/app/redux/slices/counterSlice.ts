@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Counter } from '../../types';
+import { Counter, CounterListItem } from '../../types';
 import { RootState } from '../store';
 
 const initialState = {
@@ -16,8 +16,8 @@ export const counterSlice = createSlice({
     removeCounter: (state, action: PayloadAction<string>) => {
       state.counters = state.counters.filter((counter) => counter.id !== action.payload);
     },
-    renameCounter: (state, action: PayloadAction<Counter>) => {
-      state.counters = state.counters.map(counter => {
+    renameCounter: (state, action: PayloadAction<CounterListItem>) => {
+      state.counters = state.counters.map((counter) => {
         if (counter.id === action.payload.id) {
           counter.name = action.payload.name;
         }

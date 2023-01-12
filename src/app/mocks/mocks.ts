@@ -30,10 +30,14 @@ export const users = [
 export const counters = [
   {
     id: '1',
-    name: 'counter1'
+    name: 'counter1',
+    totalAmount: 1500,
+    users
   },
   {
     id: '2',
-    name: 'counter2'
+    name: 'counter2',
+    totalAmount: 1000,
+    users
   }
 ];

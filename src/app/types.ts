@@ -11,3 +11,5 @@ export interface Counter {
   totalAmount: number;
   users: User[];
 }
+
+export type CounterListItem = Pick<Counter, 'id' | 'name'>;
