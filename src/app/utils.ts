@@ -10,8 +10,9 @@ export const getRandomColor = () => {
 };
 
 export const numberFormatting = (n: number) => {
-  return `${n}`.replace(
-    /(?:(^\d{1,3})(?=(?:\d{3})*$)|(\d{3}))(?!$)/gm,
-    '$1$2.'
-  );
+  let str = `${n}`.replace(/[^0-9]/g, '');
+
+  str = str.replace(/(?:(^\d{1,3})(?=(?:\d{3})*$)|(\d{3}))(?!$)/gm, '$1$2.');
+
+  return `${n <= -1 ? '-' : ''}${str}`;
 };
