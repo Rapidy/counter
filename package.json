@@ -29,7 +29,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prettier": "prettier --config .prettierrc 'src/**/*.ts' --write",
-    "lint": "tslint 'src/**/*.{ts,tsx,js}'"
+    "lint": "tslint 'src/**/*.{ts,tsx,js}'",
+    "stylelint": "stylelint **.scss"
   },
   "eslintConfig": {
     "extends": [

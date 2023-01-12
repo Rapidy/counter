@@ -106,10 +106,6 @@
       "spaces",
       2
     ],
-    "linebreak-style": [
-      true,
-      "LF"
-    ],
     "no-consecutive-blank-lines": true
   },
   "rulesDirectory": [
