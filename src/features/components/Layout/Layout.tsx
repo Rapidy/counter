@@ -1,10 +1,7 @@
 import React from 'react';
 import Sidebar from '../Sidebar/Sidebar';
 import { counters } from '../../../app/mocks/mocks';
-import {
-  getCounters,
-  setCounters
-} from '../../../app/redux/slices/counterSlice';
+import { getCounters, setCounters } from '../../../app/redux/slices/counterSlice';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 import { Outlet } from 'react-router-dom';
 import css from './Layout.module.scss';
