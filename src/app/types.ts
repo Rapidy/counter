@@ -12,3 +12,4 @@ export interface Counter {
   users: User[];
 }
 
+export type CounterListItem = Pick<Counter, 'id' | 'name'>;
