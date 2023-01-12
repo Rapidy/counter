@@ -9,10 +9,9 @@ export const getRandomColor = () => {
   return color;
 };
 
-export const numberFormatting = (n: number) => {
-  let str = `${n}`.replace(/[^0-9]/g, '');
-
+export const formatAmount = (amount: number) => {
+  let str = `${amount}`.replace(/[^0-9]/g, '');
   str = str.replace(/(?:(^\d{1,3})(?=(?:\d{3})*$)|(\d{3}))(?!$)/gm, '$1$2.');
 
-  return `${n <= -1 ? '-' : ''}${str}`;
+  return `${amount <= -1 ? '-' : ''}${str}`;
 };
