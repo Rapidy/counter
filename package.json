@@ -31,7 +31,7 @@
     "prettier": "prettier --config \"src/.prettierrc\" \"src/**/*.{ts,tsx}\" --write",
     "lint": "tslint 'src/**/*.{ts,tsx,js}'",
     "stylelint": "stylelint **.scss",
-    "precommit": "npx lint-staged"
+    "precommit": "npx lint-staged && tsc --noEmit"
   },
   "eslintConfig": {
     "extends": [
