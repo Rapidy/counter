@@ -8,7 +8,11 @@ export interface User {
 export interface Counter {
   id: string;
   name: string;
+  totalAmount: number;
+  users: User[];
 }
+
+export type CounterListItem = Pick<Counter, 'id' | 'name'>;
 
 export enum logType {
   AddAmount,
