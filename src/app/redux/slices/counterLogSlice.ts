@@ -20,14 +20,14 @@ export const counterLogSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(removeUser, (state, action: PayloadAction<{id: string, authorId: string}>) => {
-      const remotedUser: User | undefined = state.users.find((user) => user.id === action.payload.id);
+      const removedUser: User | undefined = state.users.find((user) => user.id === action.payload.id);
       const user: User | undefined = state.users.find((user) => user.id === action.payload.authorId);
 
-      if (user && remotedUser) {
+      if (user && removedUser) {
         state.logs.unshift({
           user,
           type: 4,
-          remotedUser,
+          removedUser,
           date: new Date()
         });
       }

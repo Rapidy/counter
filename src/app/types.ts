@@ -28,6 +28,6 @@ export interface Log {
   user: User;
   type: logType;
   amount?: number;
-  remotedUser?: User;
+  removedUser?: User;
   date: Date;
 }
