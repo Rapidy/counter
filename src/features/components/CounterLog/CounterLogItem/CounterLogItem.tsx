@@ -12,7 +12,7 @@ const CounterLogItem: React.FC<Props & Log> = ({
   user,
   type,
   amount,
-  remoteUser,
+  remotedUser,
   date,
   children
 }) => {
@@ -28,7 +28,7 @@ const CounterLogItem: React.FC<Props & Log> = ({
         return `Пригласил пользователя`;
 
       case logType.Kick:
-        return `Удалил пользователя ${remoteUser?.name}`;
+        return `Удалил пользователя ${remotedUser?.name}`;
 
       default:
         return 'Ошибка, неопределенное действие';

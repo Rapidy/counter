@@ -44,7 +44,7 @@ const CounterLog: React.FC<Props> = ({ logs }) => {
               user={log.user}
               type={log.type}
               amount={log.amount}
-              remoteUser={log.remoteUser}
+              remotedUser={log.remotedUser}
               date={log.date}
             >
               {dateElement}
