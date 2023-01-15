@@ -23,7 +23,7 @@
   white-space: pre-wrap;
   word-break: break-word;
 
-  &.green {
+  &_green {
     color: #fff;
     background-color: $green;
 
@@ -32,7 +32,7 @@
     }
   }
 
-  &.red {
+  &_red {
     color: #fff;
     background-color: lighten($accent, 5%);
 
@@ -53,7 +53,7 @@
   flex-wrap: wrap;
   margin: 0 auto 30px;
 
-  &.right {
+  &_right {
     flex-direction: row-reverse;
 
     .content {

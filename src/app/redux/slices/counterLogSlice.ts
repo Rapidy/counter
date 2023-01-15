@@ -1,34 +1,36 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Log } from '../../types';
+import { Log, User } from '../../types';
 import { RootState } from '../store';
 
 import { removeUser } from './userSlice';
 
 const initialState = {
-  logs: [] as Log[]
+  logs: [] as Log[],
+  users: [] as User[]
 };
 
 export const counterLogSlice = createSlice({
   name: 'counterLog',
   initialState,
   reducers: {
-    setCounterLog: (state, action: PayloadAction<Log[]>) => {
-      state.logs = action.payload;
+    setCounterLog: (state, action: PayloadAction<{logs: Log[], users: User[]}>) => {
+      state.logs = action.payload.logs;
+      state.users = action.payload.users;
     }
   },
   extraReducers: (builder) => {
-    builder.addCase(removeUser, (state, action) => {
-      state.logs.unshift({
-        user: {
-          id: '3',
-          name: 'Artopka',
-          avatarUrl:
-            'https://mobimg.b-cdn.net/v3/fetch/0d/0d9c680abe34874711efeafa5df0320c.jpeg',
-          totalAmount: 700
-        },
-        type: 4,
-        date: new Date()
-      });
+    builder.addCase(removeUser, (state, action: PayloadAction<{id: string, authorId: string}>) => {
+      const remoteUser: User | undefined = state.users.find((user) => user.id === action.payload.id);
+      const user: User | undefined = state.users.find((user) => user.id === action.payload.authorId);
+
+      if (user && remoteUser) {
+        state.logs.unshift({
+          user,
+          type: 4,
+          remoteUser,
+          date: new Date()
+        });
+      }
     });
   }
 });

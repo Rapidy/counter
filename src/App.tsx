@@ -19,7 +19,7 @@ function App() {
 
   React.useEffect(() => {
     dispatch(setUsers(users));
-    dispatch(setCounterLog(logs));
+    dispatch(setCounterLog({logs, users}));
   }, [dispatch]);
 
   const userList = useAppSelector(getUsers);

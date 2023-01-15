@@ -55,11 +55,6 @@ export const logs = [
     date: new Date(2023, 1, 4, 3, 24, 2)
   },
   {
-    user: users[3],
-    type: 4,
-    date: new Date(2023, 1, 5, 3, 24, 3)
-  },
-  {
     user: users[1],
     type: 1,
     amount: 200,

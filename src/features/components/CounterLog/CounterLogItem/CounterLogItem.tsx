@@ -12,29 +12,32 @@ const CounterLogItem: React.FC<Props & Log> = ({
   user,
   type,
   amount,
+  remoteUser,
   date,
   children
 }) => {
-  let text: string = '';
+  const [text] = React.useState<string>(() => {
+    switch (type) {
+      case logType.AddAmount:
+        return `Прибавил +${amount}`;
 
-  switch (type) {
-    case logType.AddAmount:
-      text = `Lorem ipsum dolor sit amet consectetur adipisicing. + ${amount}`;
-      break;
-    case logType.SubstrAmount:
-      text = `Lorem ipsum dolor sit amet consectetur adipisicing. - ${amount}`;
-      break;
-    case logType.Invite:
-      text = `Lorem, ipsum dolor.`;
-      break;
-    case logType.Kick:
-      text = 'Lorem, ipsum.';
-      break;
-  }
+      case logType.SubstrAmount:
+        return `Отнял -${amount}`;
+
+      case logType.Invite:
+        return `Пригласил пользователя`;
+
+      case logType.Kick:
+        return `Удалил пользователя ${remoteUser?.name}`;
+
+      default:
+        return 'Ошибка, неопределенное действие';
+    }
+  });
 
   const classType = {
-    [css.green]: type === logType.AddAmount,
-    [css.red]: type === logType.SubstrAmount
+    [css.content_green]: type === logType.AddAmount,
+    [css.content_red]: type === logType.SubstrAmount
   };
 
   const isMine: boolean = user.id === '3';
@@ -43,7 +46,7 @@ const CounterLogItem: React.FC<Props & Log> = ({
   return (
     <>
       {children}
-      <div className={cn(css.log, { [css.right]: isMine })}>
+      <div className={cn(css.log, { [css.log_right]: isMine })}>
         <div className={css.wrapper}>
           {!isMine && (
             <div>
