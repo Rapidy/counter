@@ -26,7 +26,7 @@ export enum logType {
 }
 
 export interface Log {
-  user: User;
+  user?: User;
   type: logType;
   amount?: number;
   subject?: User;

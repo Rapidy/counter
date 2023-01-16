@@ -46,6 +46,16 @@ export const counters = [
 
 export const logs = [
   {
+    type: logType.ReachGoal,
+    date: new Date(2023, 1, 3, 2, 24, 1)
+  },
+  {
+    user: users[1],
+    type: logType.Kick,
+    subject: users[3],
+    date: new Date(2023, 1, 3, 2, 24, 1)
+  },
+  {
     user: users[2],
     type: logType.createInvitation,
     date: new Date(2023, 1, 3, 2, 24, 1)

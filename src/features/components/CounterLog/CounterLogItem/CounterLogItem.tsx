@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import css from './CounterLogItem.module.scss';
 import { Log, logType } from '../../../../app/types';
-import { timeFormatting, getRandomColor } from '../../../../app/utils';
+import { getRandomColor, timeFormatting } from '../../../../app/utils';
 
 const CounterLogItem: React.FC<Log> = ({ user, type, amount, subject, date }) => {
   const [text] = React.useState<string>(() => {
@@ -41,28 +41,28 @@ const CounterLogItem: React.FC<Log> = ({ user, type, amount, subject, date }) =>
     [css.content_red]: type === logType.SubstrAmount
   };
 
-  const isMine: boolean = user.id === '3';
+  const isMine: boolean = user?.id === '3';
   const noAvatarBackground = getRandomColor();
 
   return (
     <div className={cn(css.log, { [css.log_right]: isMine })}>
       <div className={css.wrapper}>
-        {!isMine && (
+        {!isMine && type !== logType.ReachGoal && (
           <div>
-            {!!user.avatarUrl ? (
-              <img className={css.avatar} src={user.avatarUrl} alt={user.name} />
+            {!!user?.avatarUrl ? (
+              <img className={css.avatar} src={user?.avatarUrl} alt={user?.name} />
             ) : (
               <span
                 className={cn(css.avatar, css.noAvatar)}
                 style={{ background: noAvatarBackground }}
               >
-                {user.name.slice(0, 1)}
+                {user?.name.slice(0, 1)}
               </span>
             )}
           </div>
         )}
         <div className={cn(css.content, classType)}>
-          {!isMine && <div className={css.username}>{user.name}</div>}
+          {!isMine && <div className={css.username}>{user?.name}</div>}
           {text}
           <div className={css.date}>
             <span className={css.time}>{timeFormatting(date)}</span>
