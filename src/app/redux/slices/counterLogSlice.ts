@@ -13,25 +13,28 @@ export const counterLogSlice = createSlice({
   name: 'counterLog',
   initialState,
   reducers: {
-    setCounterLog: (state, action: PayloadAction<{logs: Log[], users: User[]}>) => {
+    setCounterLog: (state, action: PayloadAction<{ logs: Log[]; users: User[] }>) => {
       state.logs = action.payload.logs;
       state.users = action.payload.users;
     }
   },
   extraReducers: (builder) => {
-    builder.addCase(removeUser, (state, action: PayloadAction<{id: string, authorId: string}>) => {
-      const removedUser: User | undefined = state.users.find((user) => user.id === action.payload.id);
-      const user: User | undefined = state.users.find((user) => user.id === action.payload.authorId);
+    builder.addCase(
+      removeUser,
+      (state, action: PayloadAction<{ id: string; authorId: string }>) => {
+        const removedUser = state.users.find((user) => user.id === action.payload.id);
+        const user = state.users.find((user) => user.id === action.payload.authorId);
 
-      if (user && removedUser) {
-        state.logs.unshift({
-          user,
-          type: 4,
-          removedUser,
-          date: new Date()
-        });
+        if (user && removedUser) {
+          state.logs.unshift({
+            user,
+            type: 4,
+            subject: removedUser,
+            date: new Date()
+          });
+        }
       }
-    });
+    );
   }
 });
 

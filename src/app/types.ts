@@ -17,17 +17,18 @@ export type CounterListItem = Pick<Counter, 'id' | 'name'>;
 export enum logType {
   AddAmount,
   SubstrAmount,
-  Invite,
+  createInvitation,
   Accept,
   Kick,
   SetGoal,
-  ReachGoal
+  ReachGoal,
+  RemoveGoal
 }
 
 export interface Log {
   user: User;
   type: logType;
   amount?: number;
-  removedUser?: User;
+  subject?: User;
   date: Date;
 }

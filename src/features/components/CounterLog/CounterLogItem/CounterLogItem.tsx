@@ -4,18 +4,7 @@ import css from './CounterLogItem.module.scss';
 import { Log, logType } from '../../../../app/types';
 import { timeFormatting, getRandomColor } from '../../../../app/utils';
 
-interface Props {
-  children?: React.ReactNode;
-}
-
-const CounterLogItem: React.FC<Props & Log> = ({
-  user,
-  type,
-  amount,
-  removedUser,
-  date,
-  children
-}) => {
+const CounterLogItem: React.FC<Log> = ({ user, type, amount, subject, date }) => {
   const [text] = React.useState<string>(() => {
     switch (type) {
       case logType.AddAmount:
@@ -24,14 +13,26 @@ const CounterLogItem: React.FC<Props & Log> = ({
       case logType.SubstrAmount:
         return `Отнял -${amount}`;
 
-      case logType.Invite:
-        return `Пригласил пользователя`;
+      case logType.createInvitation:
+        return `Создал приглашение`;
+
+      case logType.Accept:
+        return `Принял приглашение`;
 
       case logType.Kick:
-        return `Удалил пользователя ${removedUser?.name}`;
+        return `Удалил пользователя ${subject?.name}`;
+
+      case logType.SetGoal:
+        return `Установил цель`;
+
+      case logType.ReachGoal:
+        return `Вы достигли цели`;
+
+      case logType.RemoveGoal:
+        return `Удалил цель`;
 
       default:
-        return 'Ошибка, неопределенное действие';
+        return '';
     }
   });
 
@@ -44,38 +45,31 @@ const CounterLogItem: React.FC<Props & Log> = ({
   const noAvatarBackground = getRandomColor();
 
   return (
-    <>
-      {children}
-      <div className={cn(css.log, { [css.log_right]: isMine })}>
-        <div className={css.wrapper}>
-          {!isMine && (
-            <div>
-              {!!user.avatarUrl ? (
-                <img
-                  className={css.avatar}
-                  src={user.avatarUrl}
-                  alt={user.name}
-                />
-              ) : (
-                <span
-                  className={cn(css.avatar, css.noAvatar)}
-                  style={{ background: noAvatarBackground }}
-                >
-                  {user.name.slice(0, 1)}
-                </span>
-              )}
-            </div>
-          )}
-          <div className={cn(css.content, classType)}>
-            {!isMine && <div className={css.username}>{user.name}</div>}
-            {text}
-            <div className={css.date}>
-              <span className={css.time}>{timeFormatting(date)}</span>
-            </div>
+    <div className={cn(css.log, { [css.log_right]: isMine })}>
+      <div className={css.wrapper}>
+        {!isMine && (
+          <div>
+            {!!user.avatarUrl ? (
+              <img className={css.avatar} src={user.avatarUrl} alt={user.name} />
+            ) : (
+              <span
+                className={cn(css.avatar, css.noAvatar)}
+                style={{ background: noAvatarBackground }}
+              >
+                {user.name.slice(0, 1)}
+              </span>
+            )}
+          </div>
+        )}
+        <div className={cn(css.content, classType)}>
+          {!isMine && <div className={css.username}>{user.name}</div>}
+          {text}
+          <div className={css.date}>
+            <span className={css.time}>{timeFormatting(date)}</span>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -15,12 +15,8 @@ const CounterLog: React.FC<Props> = ({ logs }) => {
     ref.current?.scrollIntoView({ behavior: 'auto' });
   }, [logs]);
 
-  let isDate = '';
-
   const createDateElement = (date: Date) => {
-    if (isDate === '' || isDate !== date.toLocaleDateString()) {
-      isDate = date.toLocaleDateString();
-
+    if (new Date(2023, 1, 3).toLocaleDateString() === date.toLocaleDateString()) {
       return (
         <div className={css.isDate}>
           <span>{date.toLocaleDateString()}</span>
@@ -39,16 +35,16 @@ const CounterLog: React.FC<Props> = ({ logs }) => {
           const dateElement = createDateElement(log.date);
 
           return (
-            <CounterLogItem
-              key={`${log.user.id}_${log.date.toJSON()}`}
-              user={log.user}
-              type={log.type}
-              amount={log.amount}
-              removedUser={log.removedUser}
-              date={log.date}
-            >
+            <div key={`${log.user.id}_${log.date.toJSON()}`}>
               {dateElement}
-            </CounterLogItem>
+              <CounterLogItem
+                user={log.user}
+                type={log.type}
+                amount={log.amount}
+                subject={log.subject}
+                date={log.date}
+              />
+            </div>
           );
         })}
         <div ref={ref} />
