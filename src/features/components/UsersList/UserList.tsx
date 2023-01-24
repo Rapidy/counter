@@ -14,14 +14,14 @@ interface Props {
 const UserList: React.FC<Props> = ({ users, listName }) => {
   const dispatch = useAppDispatch();
 
+  const authorId = '1';
+
   const handleDeleteUser = (id: string) => {
-    dispatch(removeUser(id));
+    dispatch(removeUser({ id, authorId }));
   };
 
   const randomAvatarBackground = getRandomColor();
-  const sortedUserList = [...users].sort(
-    (a, b) => b.totalAmount - a.totalAmount
-  );
+  const sortedUserList = [...users].sort((a, b) => b.totalAmount - a.totalAmount);
 
   return (
     <div>

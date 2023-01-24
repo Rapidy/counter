@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import css from './CounterItem.module.scss';
 import cn from 'classnames';
-import { Counter } from '../../../../app/types';
+import { CounterListItem } from '../../../../app/types';
 
 import { faTrashCan, faPen } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
@@ -14,7 +14,7 @@ interface Props {
   onClickCounter: (id: string) => void;
 }
 
-const CounterItem: React.FC<Props & Counter> = ({
+const CounterItem: React.FC<Props & CounterListItem> = ({
   id,
   name,
   isActive,
@@ -61,7 +61,7 @@ const CounterItem: React.FC<Props & Counter> = ({
           autoFocus={true}
           onKeyDown={onKeyDown}
           onBlur={onRename}
-          required
+          required={true}
         />
       ) : (
         <p className={css.name}>{name}</p>

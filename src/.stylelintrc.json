@@ -12,6 +12,15 @@
     "color-function-notation": null,
     "scss/dollar-variable-empty-line-before": null,
     "scss/no-global-function-names": null,
-    "font-family-name-quotes": null
+    "font-family-name-quotes": null,
+    "no-empty-source": null,
+    "property-no-unknown": [
+      true,
+      {
+        "ignoreProperties": [
+          "composes"
+        ]
+      }
+    ]
   }
 }
