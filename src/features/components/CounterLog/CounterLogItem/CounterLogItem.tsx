@@ -36,7 +36,7 @@ const CounterLogItem: React.FC<Log> = ({ user, type, amount, subject, date }) =>
     }
   });
 
-  const classType = {
+  const typeClasses = {
     [css.content_green]: type === logType.AddAmount,
     [css.content_red]: type === logType.SubstrAmount
   };
@@ -44,13 +44,13 @@ const CounterLogItem: React.FC<Log> = ({ user, type, amount, subject, date }) =>
   const isMine: boolean = user?.id === '3';
   const noAvatarBackground = getRandomColor();
 
-  const classPosition = {
+  const positionClasses = {
     [css.log_right]: isMine,
     [css.log_center]: type === logType.ReachGoal
   };
 
   return (
-    <div className={cn(css.log, classPosition)}>
+    <div className={cn(css.log, positionClasses)}>
       <div className={css.wrapper}>
         {!isMine && type !== logType.ReachGoal && (
           <div>
@@ -66,8 +66,10 @@ const CounterLogItem: React.FC<Log> = ({ user, type, amount, subject, date }) =>
             )}
           </div>
         )}
-        <div className={cn(css.content, classType)}>
-          {!isMine && type !== logType.ReachGoal && <div className={css.username}>{user?.name}</div>}
+        <div className={cn(css.content, typeClasses)}>
+          {!isMine && type !== logType.ReachGoal && (
+            <div className={css.username}>{user?.name}</div>
+          )}
           {text}
           <div className={css.date}>
             <span className={css.time}>{timeFormatting(date)}</span>
