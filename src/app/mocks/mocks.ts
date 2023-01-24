@@ -46,6 +46,21 @@ export const counters = [
 
 export const logs = [
   {
+    user: users[1],
+    type: logType.Accept,
+    date: new Date(2023, 1, 2, 2, 24, 3)
+  },
+  {
+    user: users[3],
+    type: logType.RemoveGoal,
+    date: new Date(2023, 1, 2, 2, 24, 2)
+  },
+  {
+    user: users[3],
+    type: logType.SetGoal,
+    date: new Date(2023, 1, 3, 2, 24, 1)
+  },
+  {
     type: logType.ReachGoal,
     date: new Date(2023, 1, 3, 2, 24, 1)
   },
@@ -53,12 +68,12 @@ export const logs = [
     user: users[1],
     type: logType.Kick,
     subject: users[3],
-    date: new Date(2023, 1, 3, 2, 24, 1)
+    date: new Date(2023, 1, 4, 2, 24, 1)
   },
   {
     user: users[2],
     type: logType.createInvitation,
-    date: new Date(2023, 1, 3, 2, 24, 1)
+    date: new Date(2023, 1, 4, 2, 24, 1)
   },
   {
     user: users[0],
