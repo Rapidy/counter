@@ -1,8 +1,8 @@
 import React from 'react';
 
-type TypeHook = [boolean, (value: boolean) => void, () => void];
+type HookType = [boolean, (value: boolean) => void, () => void];
 
-const useCheckbox = (initial: boolean = false): TypeHook => {
+const useToggle = (initial: boolean = false): HookType => {
   const [state, setState] = React.useState(initial);
 
   const toggle = () => setState(!state);
@@ -10,4 +10,4 @@ const useCheckbox = (initial: boolean = false): TypeHook => {
   return [state, setState, toggle];
 };
 
-export default useCheckbox;
+export default useToggle;

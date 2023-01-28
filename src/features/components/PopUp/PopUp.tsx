@@ -5,15 +5,15 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 interface Props {
   children: React.ReactNode;
-  is: boolean;
+  isActive: boolean;
   toggle: () => void;
   title?: string;
 }
 
-const PopUp: React.FC<Props> = ({ children, is, toggle, title }) => {
+const PopUp: React.FC<Props> = ({ children, isActive, toggle, title }) => {
   return (
     <>
-      {is && (
+      {isActive && (
         <div className={css.popup}>
           <div className={css.container}>
             <div className={css.box}>
