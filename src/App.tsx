@@ -1,45 +1,60 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import css from './App.module.scss';
 
 import UserList from './features/components/UsersList/UserList';
+import CounterLog from './features/components/CounterLog/CounterLog';
 
-import { users, counters } from './app/mocks/mocks';
+import { users, logs } from './app/mocks/mocks';
 import { getUsers, setUsers } from './app/redux/slices/userSlice';
-import { getCounters, setCounters } from './app/redux/slices/counterSlice';
+import { getCounterLog, setCounterLog } from './app/redux/slices/counterLogSlice';
 import { useAppDispatch, useAppSelector } from './app/hooks';
 
-import Sidebar from './features/components/Sidebar/Sidebar';
+import Layout from './features/components/Layout/Layout';
+import PopUp from './features/components/PopUp/PopUp';
+import useToggle from './features/hooks/useToggle';
 
 function App() {
   const dispatch = useAppDispatch();
 
   React.useEffect(() => {
     dispatch(setUsers(users));
-    dispatch(setCounters(counters));
+    dispatch(setCounterLog({ logs, users }));
   }, [dispatch]);
 
   const userList = useAppSelector(getUsers);
-  const counterList = useAppSelector(getCounters);
+  const counterLog = useAppSelector(getCounterLog);
+
+  const [statePopUp, , togglePopUp] = useToggle();
 
   return (
-    <div className={css.root}>
-      <div className={css.container}>
-        <div className={css.wrapper}>
-          <Sidebar counters={counterList} />
-          <Routes>
-            <Route
-              path="/:id"
-              element={
-                <>
-                  <UserList users={userList} listName="Счетчик" />
-                </>
-              }
-            />
-          </Routes>
-        </div>
-      </div>
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route
+          path="counter/:id"
+          element={
+            <>
+              <UserList users={userList} listName="Счетчик" />
+              <CounterLog logs={counterLog} />
+
+              <button onClick={togglePopUp}>Open</button>
+              <PopUp isActive={statePopUp} toggle={togglePopUp} title="Title">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mole Lorem ipsum
+                dolor, sit amet consectetur adipisicing elit. Mole Lorem ipsum dolor, sit
+                amet consectetur adipisicing elit. Mole Lorem ipsum dolor, sit amet
+                consectetur adipisicing elit. Mole Lorem ipsum dolor, sit amet consectetur
+                adipisicing elit. Mole Lorem ipsum dolor, sit amet consectetur adipisicing
+                elit. Mole Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mole
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mole Lorem ipsum
+                dolor, sit amet consectetur adipisicing elit. Mole Lorem ipsum dolor, sit
+                amet consectetur adipisicing elit. Mole Lorem ipsum dolor, sit amet
+                consectetur adipisicing elit. Mole Lorem ipsum dolor, sit amet consectetur
+                adipisicing elit.
+              </PopUp>
+            </>
+          }
+        />
+      </Route>
+    </Routes>
   );
 }
 

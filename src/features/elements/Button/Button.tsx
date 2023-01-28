@@ -9,12 +9,7 @@ interface Props {
   color?: 'secondary' | 'primary';
 }
 
-const Button: React.FC<Props> = ({
-  children,
-  className,
-  onClick,
-  color = 'primary'
-}) => {
+const Button: React.FC<Props> = ({ children, className, onClick, color = 'primary' }) => {
   return (
     <button
       className={cn(css.button, className, {

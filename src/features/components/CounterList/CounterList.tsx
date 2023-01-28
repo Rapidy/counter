@@ -1,25 +1,20 @@
 import React from 'react';
 import css from './CounterList.module.scss';
-import { Counter } from '../../../app/types';
+import { CounterListItem } from '../../../app/types';
 import { useAppDispatch } from '../../../app/hooks';
-import {
-  removeCounter,
-  renameCounter
-} from '../../../app/redux/slices/counterSlice';
+import { removeCounter, renameCounter } from '../../../app/redux/slices/counterSlice';
+import { useParams } from 'react-router-dom';
 
 import CounterItem from './CounterItem/CounterItem';
-import { matchPath, useLocation } from 'react-router-dom';
 
 interface Props {
-  counters: Counter[];
+  counters: CounterListItem[];
 }
 
 const CounterList: React.FC<Props> = ({ counters }) => {
   const dispatch = useAppDispatch();
-  const location = useLocation();
-  const [activeCounter, setActiveCounter] = React.useState<string | undefined>(
-    ''
-  );
+  const { id } = useParams();
+  const [activeCounter, setActiveCounter] = React.useState<string | undefined>('');
 
   const handleDeleteCounter = (id: string) => {
     dispatch(removeCounter(id));
@@ -34,10 +29,8 @@ const CounterList: React.FC<Props> = ({ counters }) => {
   };
 
   React.useEffect(() => {
-    const match = matchPath('/:id', location.pathname);
-
-    setActiveCounter(match?.params.id);
-  }, []);
+    setActiveCounter(id);
+  }, [id]);
 
   return (
     <div className={css.wrapper}>
