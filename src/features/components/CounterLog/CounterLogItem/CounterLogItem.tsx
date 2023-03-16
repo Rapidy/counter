@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import css from './CounterLogItem.module.scss';
 import { Log, logType } from '../../../../app/types';
-import { getRandomColor, timeFormatting } from '../../../../app/utils';
+import { formatTime, getRandomColor } from '../../../../app/utils';
 
 const CounterLogItem: React.FC<Log> = ({ user, type, amount, subject, date }) => {
   const [text] = React.useState<string>(() => {
@@ -72,7 +72,7 @@ const CounterLogItem: React.FC<Log> = ({ user, type, amount, subject, date }) =>
           )}
           {text}
           <div className={css.date}>
-            <span className={css.time}>{timeFormatting(date)}</span>
+            <span className={css.time}>{formatTime(date)}</span>
           </div>
         </div>
       </div>

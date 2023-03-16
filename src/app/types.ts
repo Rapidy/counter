@@ -10,6 +10,7 @@ export interface Counter {
   name: string;
   totalAmount: number;
   users: User[];
+  goal?: Goal;
 }
 
 export type CounterListItem = Pick<Counter, 'id' | 'name'>;
@@ -31,4 +32,9 @@ export interface Log {
   amount?: number;
   subject?: User;
   date: Date;
+}
+
+export interface Goal {
+  currentAmount: number;
+  goalAmount: number;
 }

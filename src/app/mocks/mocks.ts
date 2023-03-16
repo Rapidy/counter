@@ -33,8 +33,12 @@ export const counters = [
   {
     id: '1',
     name: 'counter1',
-    totalAmount: 1500,
-    users
+    totalAmount: 300,
+    users,
+    goal: {
+      currentAmount: 300,
+      goalAmount: 500
+    }
   },
   {
     id: '2',
