@@ -33,8 +33,12 @@ export const counters = [
   {
     id: '1',
     name: 'counter1',
-    totalAmount: 1500,
-    users
+    totalAmount: 300,
+    users,
+    goal: {
+      currentAmount: 300,
+      goalAmount: 500
+    }
   },
   {
     id: '2',
@@ -72,7 +76,7 @@ export const logs = [
   },
   {
     user: users[2],
-    type: logType.createInvitation,
+    type: logType.CreateInvitation,
     date: new Date(2023, 1, 4, 2, 24, 1)
   },
   {
@@ -89,7 +93,7 @@ export const logs = [
   },
   {
     user: users[2],
-    type: logType.createInvitation,
+    type: logType.CreateInvitation,
     date: new Date(2023, 1, 5, 3, 24, 5)
   },
   {

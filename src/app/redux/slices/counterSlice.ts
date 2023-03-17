@@ -30,5 +30,7 @@ export const counterSlice = createSlice({
 export const { setCounters, removeCounter, renameCounter } = counterSlice.actions;
 
 export const getCounters = (state: RootState) => state.counter.counters;
+export const getCounter = (state: RootState, id: string) =>
+  state.counter.counters.find((counter) => counter.id === id);
 
 export default counterSlice.reducer;

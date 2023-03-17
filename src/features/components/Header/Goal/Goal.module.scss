@@ -1,0 +1,33 @@
+@import '../../../variables';
+
+.wrapper {
+  background: $mainBg;
+  border: 2px solid $grey;
+  border-top: none;
+  padding: 16px 25px 12px;
+  display: inline-block;
+  border-radius: 0 0 5px 5px;
+}
+
+.title {
+  color: darken($bg, 5%);
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.amount {
+  font-weight: 400;
+
+  &_goal {
+    color: $green;
+  }
+
+  &_current {
+    color: darken($accent, 5%);
+
+    &_reached {
+      color: $green;
+    }
+  }
+}
