@@ -13,7 +13,7 @@ const CounterLogItem: React.FC<Log> = ({ user, type, amount, subject, date }) =>
       case logType.SubstrAmount:
         return `Отнял -${amount}`;
 
-      case logType.createInvitation:
+      case logType.CreateInvitation:
         return `Создал приглашение`;
 
       case logType.Accept:

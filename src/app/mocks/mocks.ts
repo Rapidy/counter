@@ -76,7 +76,7 @@ export const logs = [
   },
   {
     user: users[2],
-    type: logType.createInvitation,
+    type: logType.CreateInvitation,
     date: new Date(2023, 1, 4, 2, 24, 1)
   },
   {
@@ -93,7 +93,7 @@ export const logs = [
   },
   {
     user: users[2],
-    type: logType.createInvitation,
+    type: logType.CreateInvitation,
     date: new Date(2023, 1, 5, 3, 24, 5)
   },
   {
