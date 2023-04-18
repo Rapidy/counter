@@ -4,9 +4,26 @@
   background: $mainBg;
   border: 2px solid $grey;
   border-top: none;
-  padding: 16px 25px 12px;
+  padding: 16px 22px 12px;
   display: inline-block;
   border-radius: 0 0 5px 5px;
+  position: relative;
+  overflow: hidden;
+
+  &__progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: $green;
+    opacity: 0.1;
+    z-index: 1;
+  }
+
+  & > *:not(&__progress) {
+    z-index: 2;
+    position: relative;
+  }
 }
 
 .title {
@@ -14,17 +31,23 @@
   font-size: 15px;
   font-weight: 500;
   margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .amount {
   font-weight: 400;
+  color: $bg;
+  height: 16px;
+  overflow: hidden;
 
   &_goal {
     color: $green;
   }
 
   &_current {
-    color: darken($accent, 5%);
+    color: lighten($accent, 7%);
 
     &_reached {
       color: $green;

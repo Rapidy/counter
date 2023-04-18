@@ -2,7 +2,9 @@ import React from 'react';
 import css from './Goal.module.scss';
 import cn from 'classnames';
 
-import { formatAmount } from '../../../../app/utils';
+import { formatAmount, getPercentage } from '../../../../app/utils';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrophy } from '@fortawesome/free-solid-svg-icons';
 
 interface Props {
   title?: string;
@@ -13,7 +15,14 @@ interface Props {
 const Goal: React.FC<Props> = ({ title = 'Цель', goalAmount, currentAmount }) => {
   return (
     <div className={css.wrapper}>
-      <h4 className={css.title}>{title}</h4>
+      <div
+        className={css.wrapper__progress}
+        style={{ height: getPercentage(currentAmount, goalAmount, true) }}
+      />
+
+      <h4 className={css.title}>
+        {title} <FontAwesomeIcon icon={faTrophy} size="xs" />
+      </h4>
       <p className={css.amount}>
         <span
           className={cn(css.amount_current, {

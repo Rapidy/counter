@@ -24,7 +24,7 @@ const Layout: React.FC = () => {
       <div className={css.container}>
         <Sidebar counters={counterList} />
         <div className={css.wrapper}>
-          <Header title="Название счетчика" goal={activeCounter?.goal} />
+          <Header title={activeCounter?.name} goal={activeCounter?.goal} />
 
           <div className={css.counter}>
             <Outlet />
