@@ -13,3 +13,13 @@
   margin-right: 10px;
   margin-top: 10px;
 }
+
+.panel {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  .menu {
+    margin-top: 10px;
+  }
+}

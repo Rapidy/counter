@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import UserList from './features/components/UsersList/UserList';
 import CounterLog from './features/components/CounterLog/CounterLog';
 
-import { users, logs } from './app/mocks/mocks';
+import { logs, users } from './app/mocks/mocks';
 import { getUsers, setUsers } from './app/redux/slices/userSlice';
 import { getCounterLog, setCounterLog } from './app/redux/slices/counterLogSlice';
 import { useAppDispatch, useAppSelector } from './app/hooks';
@@ -24,7 +24,7 @@ function App() {
   const userList = useAppSelector(getUsers);
   const counterLog = useAppSelector(getCounterLog);
 
-  const [statePopUp, , togglePopUp] = useToggle();
+  const [statePopUp, togglePopUp] = useToggle();
 
   return (
     <Routes>
