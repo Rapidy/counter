@@ -38,3 +38,10 @@ export interface Goal {
   currentAmount: number;
   goalAmount: number;
 }
+
+export interface Notification {
+  id: string;
+  title: string;
+  description: string;
+  isViewed: boolean;
+}
