@@ -1,0 +1,71 @@
+@import '../../../variables';
+
+.wrapper {
+  position: relative;
+
+  .button {
+    position: relative;
+    padding: 0;
+
+    .counter {
+      position: absolute;
+      top: 0;
+      right: -3px;
+      background: lighten($accent, 3%);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      font-size: 13px;
+    }
+
+    .icon {
+      font-size: 30px;
+
+      path {
+        fill: darken($bg, 5%);
+      }
+    }
+
+    &:hover {
+      .icon {
+        &.new {
+          transform-origin: top;
+          animation: shakingBell 0.3s infinite ease-in-out;
+        }
+
+        path {
+          fill: lighten($bg, 15%);
+        }
+      }
+    }
+  }
+}
+
+.popover {
+  margin-top: 12px;
+
+  &__content {
+    width: 500px;
+    padding: 17px;
+  }
+}
+
+@keyframes shakingBell {
+  0%,
+  50%,
+  100% {
+    transform: rotate(0);
+  }
+
+  25% {
+    transform: rotate(3deg);
+  }
+
+  75% {
+    transform: rotate(-3deg);
+  }
+}

@@ -16,9 +16,23 @@ export const formatAmount = (amount: number) => {
   return `${amount <= -1 ? '-' : ''}${str}`;
 };
 
-export const timeFormatting = (date: Date): string => {
+export const formatTime = (date: Date): string => {
   const hours = date.getHours();
   const minutes = date.getMinutes();
 
   return `${hours < 10 ? '0' + hours : hours}:${minutes < 10 ? '0' + minutes : minutes}`;
+};
+
+export const getPercentage = (
+  currentNumber: number,
+  totalNumber: number,
+  isString?: boolean
+) => {
+  const percentage = (currentNumber / totalNumber) * 100;
+
+  if (isString) {
+    return percentage <= 100 ? `${percentage}%` : '100%';
+  }
+
+  return percentage <= 100 ? percentage : 100;
 };

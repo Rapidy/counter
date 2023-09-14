@@ -10,6 +10,7 @@ export interface Counter {
   name: string;
   totalAmount: number;
   users: User[];
+  goal?: Goal;
 }
 
 export type CounterListItem = Pick<Counter, 'id' | 'name'>;
@@ -17,7 +18,7 @@ export type CounterListItem = Pick<Counter, 'id' | 'name'>;
 export enum logType {
   AddAmount,
   SubstrAmount,
-  createInvitation,
+  CreateInvitation,
   Accept,
   Kick,
   SetGoal,
@@ -31,4 +32,16 @@ export interface Log {
   amount?: number;
   subject?: User;
   date: Date;
+}
+
+export interface Goal {
+  currentAmount: number;
+  goalAmount: number;
+}
+
+export interface Notification {
+  id: string;
+  title: string;
+  description: string;
+  isViewed: boolean;
 }
