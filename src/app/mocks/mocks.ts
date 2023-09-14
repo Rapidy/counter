@@ -1,6 +1,6 @@
-import { logType } from '../types';
+import { Counter, Log, logType, Notification, User } from '../types';
 
-export const users = [
+export const users: User[] = [
   {
     id: '1',
     name: 'Sashka',
@@ -29,7 +29,7 @@ export const users = [
   }
 ];
 
-export const counters = [
+export const counters: Counter[] = [
   {
     id: '1',
     name: 'counter1',
@@ -48,7 +48,7 @@ export const counters = [
   }
 ];
 
-export const logs = [
+export const logs: Log[] = [
   {
     user: users[1],
     type: logType.Accept,
@@ -155,5 +155,33 @@ export const logs = [
     type: logType.AddAmount,
     amount: 500,
     date: new Date(2023, 1, 6, 3, 4, 15)
+  }
+];
+
+export const notifications: Notification[] = [
+  {
+    id: '1',
+    title: 'Просто какой то длинный заголовок',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, corporis dolorum eos id ipsum iure laboriosam maiores minus modi repudiandae.',
+    isViewed: false
+  },
+  {
+    id: '2',
+    title: 'Короткий заголовок',
+    description: 'Lorem ipsum dolor sit sam maiores minus modi repudiandae.',
+    isViewed: false
+  },
+  {
+    id: '3',
+    title: 'Просто какой то длинный заголовок',
+    description: 'Lorem ipsum dolor sit amet',
+    isViewed: false
+  },
+  {
+    id: '4',
+    title: 'Заголовок',
+    description: 'Lorem ipsum dolor sit iure laboriosam maiores minus modi repudiandae.',
+    isViewed: true
   }
 ];

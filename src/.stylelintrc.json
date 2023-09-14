@@ -1,8 +1,5 @@
 {
-  "extends": [
-    "stylelint-config-standard-scss",
-    "stylelint-config-prettier"
-  ],
+  "extends": ["stylelint-config-standard-scss", "stylelint-config-prettier"],
   "rules": {
     "selector-class-pattern": null,
     "selector-pseudo-element-colon-notation": null,
@@ -17,10 +14,9 @@
     "property-no-unknown": [
       true,
       {
-        "ignoreProperties": [
-          "composes"
-        ]
+        "ignoreProperties": ["composes"]
       }
-    ]
+    ],
+    "keyframes-name-pattern": null
   }
 }
