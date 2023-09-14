@@ -7,11 +7,10 @@ import CounterLog from './features/components/CounterLog/CounterLog';
 import { logs, users } from './app/mocks/mocks';
 import { getUsers, setUsers } from './app/redux/slices/userSlice';
 import { getCounterLog, setCounterLog } from './app/redux/slices/counterLogSlice';
-import { useAppDispatch, useAppSelector } from './app/hooks';
+import { useAppDispatch, useAppSelector, useToggle } from './app/hooks';
 
 import Layout from './features/components/Layout/Layout';
 import PopUp from './features/components/PopUp/PopUp';
-import useToggle from './features/hooks/useToggle';
 
 function App() {
   const dispatch = useAppDispatch();
