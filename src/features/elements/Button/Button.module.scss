@@ -1,10 +1,10 @@
-@import "../../variables";
+@import '../../variables';
 
 button.button {
   padding: 15px 23px;
   color: #fff;
   background: $accent;
-  border-radius: 5px;
+  border-radius: $borderRadius;
   font-size: 16px;
   display: flex;
 

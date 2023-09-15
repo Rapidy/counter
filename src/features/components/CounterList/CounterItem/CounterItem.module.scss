@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: $borderRadius;
   cursor: pointer;
   opacity: 0.75;
 
@@ -49,7 +49,7 @@ input.renameInput {
     color: #ffffff;
     width: 30px;
     height: 30px;
-    border-radius: 5px;
+    border-radius: $borderRadius;
 
     &:hover {
       background: $darkBg;
