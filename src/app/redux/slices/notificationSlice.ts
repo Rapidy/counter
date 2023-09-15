@@ -14,16 +14,13 @@ export const notificationSlice = createSlice({
       state.notifications = action.payload;
     },
     viewNotification: (state, action: PayloadAction<string>) => {
-      const currentNotification = state.notifications.find(
-        (notification) => notification.id === action.payload
-      );
+      state.notifications = state.notifications.map((notification) => {
+        if (notification.id === action.payload) {
+          notification.isViewed = true;
+        }
 
-      if (currentNotification) {
-        state.notifications = [
-          ...state.notifications,
-          { ...currentNotification, isViewed: true }
-        ];
-      }
+        return notification;
+      });
     },
     viewAllNotifications: (state) => {
       state.notifications = state.notifications.map((notification) => ({

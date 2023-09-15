@@ -16,7 +16,7 @@ const CounterLog: React.FC<Props> = ({ logs }) => {
   }, [logs]);
 
   const createDateElement = (date: Date) => {
-    if (new Date(2023, 1, 3).toLocaleDateString() === date.toLocaleDateString()) {
+    if (new Date().toLocaleDateString() === date.toLocaleDateString()) {
       return (
         <div className={css.isDate}>
           <span>{date.toLocaleDateString()}</span>

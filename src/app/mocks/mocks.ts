@@ -1,4 +1,11 @@
-import { Counter, Log, logType, Notification, User } from '../types';
+import {
+  Counter,
+  Log,
+  LogTypeEnum,
+  Notification,
+  NotificationTypeEnum,
+  User
+} from '../types';
 
 export const users: User[] = [
   {
@@ -51,108 +58,108 @@ export const counters: Counter[] = [
 export const logs: Log[] = [
   {
     user: users[1],
-    type: logType.Accept,
+    type: LogTypeEnum.Accept,
     date: new Date(2023, 1, 2, 2, 24, 3)
   },
   {
     user: users[3],
-    type: logType.RemoveGoal,
+    type: LogTypeEnum.RemoveGoal,
     date: new Date(2023, 1, 2, 2, 24, 2)
   },
   {
     user: users[3],
-    type: logType.SetGoal,
+    type: LogTypeEnum.SetGoal,
     date: new Date(2023, 1, 3, 2, 24, 1)
   },
   {
-    type: logType.ReachGoal,
+    type: LogTypeEnum.ReachGoal,
     date: new Date(2023, 1, 3, 2, 24, 1)
   },
   {
     user: users[1],
-    type: logType.Kick,
+    type: LogTypeEnum.Kick,
     subject: users[3],
     date: new Date(2023, 1, 4, 2, 24, 1)
   },
   {
     user: users[2],
-    type: logType.CreateInvitation,
+    type: LogTypeEnum.CreateInvitation,
     date: new Date(2023, 1, 4, 2, 24, 1)
   },
   {
     user: users[0],
-    type: logType.AddAmount,
+    type: LogTypeEnum.AddAmount,
     amount: 500,
     date: new Date(2023, 1, 4, 3, 24, 2)
   },
   {
     user: users[1],
-    type: logType.SubstrAmount,
+    type: LogTypeEnum.SubstrAmount,
     amount: 200,
-    date: new Date(2023, 1, 5, 3, 24, 4)
+    date: new Date(2023, 8, 13, 3, 24, 4)
   },
   {
     user: users[2],
-    type: logType.CreateInvitation,
-    date: new Date(2023, 1, 5, 3, 24, 5)
+    type: LogTypeEnum.CreateInvitation,
+    date: new Date(2023, 8, 21, 3, 24, 5)
   },
   {
     user: users[1],
-    type: logType.SubstrAmount,
+    type: LogTypeEnum.SubstrAmount,
     amount: 200,
-    date: new Date(2023, 1, 5, 3, 24, 6)
+    date: new Date(2023, 8, 12, 3, 24, 6)
   },
   {
     user: users[1],
-    type: logType.SubstrAmount,
+    type: LogTypeEnum.SubstrAmount,
     amount: 200,
-    date: new Date(2023, 1, 5, 3, 24, 7)
+    date: new Date(2023, 8, 14, 3, 24, 7)
   },
   {
     user: users[1],
-    type: logType.SubstrAmount,
+    type: LogTypeEnum.SubstrAmount,
     amount: 200,
-    date: new Date(2023, 1, 5, 3, 24, 8)
+    date: new Date(2023, 8, 14, 3, 24, 8)
   },
   {
     user: users[0],
-    type: logType.AddAmount,
+    type: LogTypeEnum.AddAmount,
     amount: 500,
     date: new Date(2023, 1, 5, 3, 24, 9)
   },
   {
     user: users[0],
-    type: logType.AddAmount,
+    type: LogTypeEnum.AddAmount,
     amount: 500,
     date: new Date(2023, 1, 5, 3, 24, 10)
   },
   {
     user: users[0],
-    type: logType.AddAmount,
+    type: LogTypeEnum.AddAmount,
     amount: 500,
     date: new Date(2023, 1, 5, 3, 24, 11)
   },
   {
     user: users[1],
-    type: logType.SubstrAmount,
+    type: LogTypeEnum.SubstrAmount,
     amount: 200,
     date: new Date(2023, 1, 6, 3, 24, 12)
   },
   {
     user: users[1],
-    type: logType.SubstrAmount,
+    type: LogTypeEnum.SubstrAmount,
     amount: 200,
     date: new Date(2023, 1, 6, 3, 24, 13)
   },
   {
     user: users[0],
-    type: logType.AddAmount,
+    type: LogTypeEnum.AddAmount,
     amount: 500,
     date: new Date(2023, 1, 6, 3, 24, 14)
   },
   {
     user: users[0],
-    type: logType.AddAmount,
+    type: LogTypeEnum.AddAmount,
     amount: 500,
     date: new Date(2023, 1, 6, 3, 4, 15)
   }
@@ -164,24 +171,28 @@ export const notifications: Notification[] = [
     title: 'Просто какой то длинный заголовок',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, corporis dolorum eos id ipsum iure laboriosam maiores minus modi repudiandae.',
-    isViewed: false
+    isViewed: false,
+    type: NotificationTypeEnum.SystemInformation
   },
   {
     id: '2',
     title: 'Короткий заголовок',
     description: 'Lorem ipsum dolor sit sam maiores minus modi repudiandae.',
-    isViewed: false
+    isViewed: false,
+    type: NotificationTypeEnum.Invitation
   },
   {
     id: '3',
     title: 'Просто какой то длинный заголовок',
     description: 'Lorem ipsum dolor sit amet',
-    isViewed: false
+    isViewed: false,
+    type: NotificationTypeEnum.Kick
   },
   {
     id: '4',
     title: 'Заголовок',
     description: 'Lorem ipsum dolor sit iure laboriosam maiores minus modi repudiandae.',
-    isViewed: true
+    isViewed: true,
+    type: NotificationTypeEnum.ReachGoal
   }
 ];
