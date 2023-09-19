@@ -10,14 +10,16 @@ import {
   NotificationTypeEnum
 } from '../../../../app/types';
 import { Popover } from '@mui/material';
+import Button from '../../../elements/Button/Button';
 
 interface Props {
   newAmount: number;
   notifications?: NotificationType[];
-  onView: (id: string) => void;
+  onView: () => void;
+  onClear: () => void;
 }
 
-const Notification: React.FC<Props> = ({ newAmount, notifications, onView }) => {
+const Notification: React.FC<Props> = ({ newAmount, notifications, onView, onClear }) => {
   const [isOpened, setOpened] = React.useState<boolean>(false);
   const ref = React.useRef<HTMLDivElement | null>(null);
 
@@ -27,6 +29,7 @@ const Notification: React.FC<Props> = ({ newAmount, notifications, onView }) => 
 
   const onClose = () => {
     setOpened(false);
+    onView();
   };
 
   return (
@@ -47,26 +50,45 @@ const Notification: React.FC<Props> = ({ newAmount, notifications, onView }) => 
         anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
         transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       >
-        <div className={cn(css.popover__content)}>
-          {notifications?.map((notification) => (
-            <div
-              className={cn(css.popover__item, {
-                [css.popover__item_invitation]:
-                  notification.type === NotificationTypeEnum.Invitation,
-                [css.popover__item_kick]: notification.type === NotificationTypeEnum.Kick,
-                [css.popover__item_system]:
-                  notification.type === NotificationTypeEnum.SystemInformation,
-                [css.popover__item_goal]:
-                  notification.type === NotificationTypeEnum.ReachGoal,
-                [css.popover__item_isViewed]: notification.isViewed
-              })}
-              key={notification.id}
-              onClick={() => onView(notification.id)}
-            >
-              {notification.title}: {notification.description}
+        {notifications?.length ? (
+          <>
+            <div className={cn(css.popover__header)}>
+              <Button
+                className={cn(css.popover__clear)}
+                onClick={onClear}
+                color="secondary"
+              >
+                Очистить уведомления
+              </Button>
             </div>
-          ))}
-        </div>
+
+            <div className={cn(css.popover__content)}>
+              {notifications?.map((notification) => (
+                <div
+                  className={cn(css.popover__item, {
+                    [css.popover__item_invitation]:
+                      notification.type === NotificationTypeEnum.Invitation,
+                    [css.popover__item_kick]:
+                      notification.type === NotificationTypeEnum.Kick,
+                    [css.popover__item_system]:
+                      notification.type === NotificationTypeEnum.SystemInformation,
+                    [css.popover__item_goal]:
+                      notification.type === NotificationTypeEnum.ReachGoal,
+                    [css.popover__item_isViewed]: notification.isViewed
+                  })}
+                  key={notification.id}
+                >
+                  <h4 className={cn(css.item__title)}>{notification.title}</h4>
+                  <p className={cn(css.item__description)}>{notification.description}</p>
+                </div>
+              ))}
+            </div>
+          </>
+        ) : (
+          <div className={cn(css.popover__content)}>
+            <span className={cn(css.popover__error)}>Уведомлений нет</span>
+          </div>
+        )}
       </Popover>
     </div>
   );
