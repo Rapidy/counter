@@ -48,9 +48,27 @@
 .popover {
   margin-top: 12px;
 
+  &__header {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  button.popover__clear {
+    padding: 7px 12px;
+    font-size: 14px;
+    background: rgba($bg, 0.1);
+    color: darken($bg, 15%);
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
   &__content {
     width: 500px;
-    border-radius: $borderRadius;
+    max-height: 425px;
+    overflow-y: auto;
   }
 
   &__item {
@@ -98,8 +116,24 @@
     }
 
     &:hover {
-      background: darken($lightBg, 6%);
+      background: $lightBg;
     }
+  }
+
+  &__error {
+    display: block;
+    padding: 20px;
+  }
+}
+
+.item {
+  &__title {
+    font-weight: 400;
+    margin-bottom: 5px;
+  }
+
+  &__description {
+    font-size: 15px;
   }
 }
 

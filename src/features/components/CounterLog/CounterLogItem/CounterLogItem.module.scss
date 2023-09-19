@@ -50,11 +50,10 @@
 
 .log {
   display: flex;
-  flex-wrap: wrap;
   margin: 0 auto 30px;
 
   &_right {
-    flex-direction: row-reverse;
+    justify-content: flex-end;
 
     .content {
       color: #fff;
@@ -86,7 +85,6 @@
   justify-content: center;
   align-items: center;
   font-weight: 500;
-  mix-blend-mode: difference;
   color: #fff;
 }
 

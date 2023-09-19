@@ -35,7 +35,7 @@ const CounterLog: React.FC<Props> = ({ logs }) => {
           const dateElement = createDateElement(log.date);
 
           return (
-            <div key={`${log.user?.id}_${log.date.toJSON()}`}>
+            <>
               {dateElement}
               <CounterLogItem
                 user={log.user}
@@ -44,7 +44,7 @@ const CounterLog: React.FC<Props> = ({ logs }) => {
                 subject={log.subject}
                 date={log.date}
               />
-            </div>
+            </>
           );
         })}
         <div ref={ref} />

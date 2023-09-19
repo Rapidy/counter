@@ -2,14 +2,13 @@
 
 .container {
   width: 490px;
-  padding: 0 20px;
   background-color: darken($mainBg, 0.7%);
 }
 
 .wrapper {
   width: 100%;
   height: 100%;
-  padding: 15px 15px 10px 0;
+  padding: 15px 15px 10px 15px;
   overflow-y: auto;
 }
 

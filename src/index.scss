@@ -31,10 +31,9 @@
     border-radius: 100px;
   }
 
-  &::-webkit-scrollbar-button {
+  &::-webkit-scrollbar-track {
     width: 9px;
-    height: 10px;
-    background-color: transparent;
+    background: rgba($bg, 0.1);
   }
 }
 
