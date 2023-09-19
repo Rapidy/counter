@@ -2,16 +2,16 @@ import React from 'react';
 import cn from 'classnames';
 import css from './CounterLogItem.module.scss';
 import { Log, LogTypeEnum } from '../../../../app/types';
-import { formatTime, getRandomColor } from '../../../../app/utils';
+import { formatAmount, formatTime, getRandomColor } from '../../../../app/utils';
 
 const CounterLogItem: React.FC<Log> = ({ user, type, amount, subject, date }) => {
   const logText = React.useMemo(() => {
     switch (type) {
       case LogTypeEnum.AddAmount:
-        return `Прибавил +${amount}`;
+        return `Прибавил ${formatAmount(amount)}`;
 
       case LogTypeEnum.SubstrAmount:
-        return `Отнял -${amount}`;
+        return `Отнял ${formatAmount(amount)}`;
 
       case LogTypeEnum.CreateInvitation:
         return `Создал приглашение`;

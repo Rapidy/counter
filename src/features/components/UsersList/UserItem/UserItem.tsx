@@ -3,6 +3,8 @@ import { User } from '../../../../app/types';
 import css from './UserItem.module.scss';
 import cn from 'classnames';
 
+import { formatAmount } from '../../../../app/utils';
+
 interface Props {
   noAvatarBackground: string;
   onDeleteUser: (id: string) => void;
@@ -31,7 +33,7 @@ const UserItem: React.FC<Props & User> = ({
         )}
 
         <span className={css.name}>{name}</span>
-        <p className={css.totalAmount}>({totalAmount})</p>
+        <p className={css.totalAmount}>({formatAmount(totalAmount)})</p>
       </div>
       <button className={css.deleteButton} onClick={() => onDeleteUser(id)}>
         X

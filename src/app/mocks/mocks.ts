@@ -32,7 +32,7 @@ export const users: User[] = [
     id: '4',
     name: 'Durak',
     avatarUrl: '',
-    totalAmount: 800
+    totalAmount: 1100
   }
 ];
 
@@ -59,17 +59,17 @@ export const logs: Log[] = [
   {
     user: users[1],
     type: LogTypeEnum.Accept,
-    date: new Date(2023, 1, 2, 2, 24, 3)
+    date: new Date(2023, 8, 20, 2, 24, 3)
   },
   {
     user: users[3],
     type: LogTypeEnum.RemoveGoal,
-    date: new Date(2023, 1, 2, 2, 24, 2)
+    date: new Date(2023, 8, 20, 2, 24, 2)
   },
   {
     user: users[3],
     type: LogTypeEnum.SetGoal,
-    date: new Date(2023, 1, 3, 2, 24, 1)
+    date: new Date(2023, 8, 20, 2, 24, 1)
   },
   {
     type: LogTypeEnum.ReachGoal,
@@ -89,13 +89,13 @@ export const logs: Log[] = [
   {
     user: users[0],
     type: LogTypeEnum.AddAmount,
-    amount: 500,
+    amount: 15500,
     date: new Date(2023, 1, 4, 3, 24, 2)
   },
   {
     user: users[1],
     type: LogTypeEnum.SubstrAmount,
-    amount: 200,
+    amount: 2200,
     date: new Date(2023, 8, 13, 3, 24, 4)
   },
   {
@@ -194,5 +194,26 @@ export const notifications: Notification[] = [
     description: 'Lorem ipsum dolor sit iure laboriosam maiores minus modi repudiandae.',
     isViewed: true,
     type: NotificationTypeEnum.ReachGoal
+  },
+  {
+    id: '5',
+    title: 'Заголовок',
+    description: 'Lorem ipsum dolor sit iure laboriosam maiores minus modi repudiandae.',
+    isViewed: true,
+    type: NotificationTypeEnum.ReachGoal
+  },
+  {
+    id: '6',
+    title: 'Заголовок',
+    description: 'Lorem ipsum dolor sit iure laboriosam maiores minus modi repudiandae.',
+    isViewed: true,
+    type: NotificationTypeEnum.SystemInformation
+  },
+  {
+    id: '7',
+    title: 'Заголовок',
+    description: 'Lorem ipsum dolor sit iure laboriosam maiores minus modi repudiandae.',
+    isViewed: true,
+    type: NotificationTypeEnum.Kick
   }
 ];
