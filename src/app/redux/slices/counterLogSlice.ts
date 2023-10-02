@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Log, User } from '../../types';
+import { Logs, User } from '../../types';
 import { RootState } from '../store';
 
 import { removeUser } from './userSlice';
 
 const initialState = {
-  logs: [] as Log[],
+  logs: [] as Logs[],
   users: [] as User[]
 };
 
@@ -13,7 +13,7 @@ export const counterLogSlice = createSlice({
   name: 'counterLog',
   initialState,
   reducers: {
-    setCounterLog: (state, action: PayloadAction<{ logs: Log[]; users: User[] }>) => {
+    setCounterLog: (state, action: PayloadAction<{ logs: Logs[]; users: User[] }>) => {
       state.logs = action.payload.logs;
       state.users = action.payload.users;
     }
@@ -26,7 +26,7 @@ export const counterLogSlice = createSlice({
         const user = state.users.find((user) => user.id === action.payload.authorId);
 
         if (user && removedUser) {
-          state.logs.unshift({
+          state.logs[state.logs.length - 1].messages.push({
             user,
             type: 4,
             subject: removedUser,

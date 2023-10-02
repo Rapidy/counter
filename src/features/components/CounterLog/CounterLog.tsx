@@ -1,11 +1,11 @@
 import React from 'react';
 import css from './CounterLog.module.scss';
-import { Log } from '../../../app/types';
+import { Logs } from '../../../app/types';
 
 import CounterLogItem from './CounterLogItem/CounterLogItem';
 
 interface Props {
-  logs: Log[];
+  logs: Logs[];
 }
 
 const CounterLog: React.FC<Props> = ({ logs }) => {
@@ -15,38 +15,27 @@ const CounterLog: React.FC<Props> = ({ logs }) => {
     ref.current?.scrollIntoView({ behavior: 'auto' });
   }, [logs]);
 
-  const createDateElement = (date: Date) => {
-    if (new Date().toLocaleDateString() === date.toLocaleDateString()) {
-      return (
-        <div className={css.isDate}>
-          <span>{date.toLocaleDateString()}</span>
-        </div>
-      );
-    }
-    return null;
-  };
-
-  const reversedLogs = [...logs].reverse();
-
   return (
     <div className={css.container}>
       <div className={css.wrapper}>
-        {reversedLogs.map((log) => {
-          const dateElement = createDateElement(log.date);
+        {logs.map((logArray) => (
+          <div key={logArray.date.toLocaleDateString()}>
+            <div className={css.isDate}>
+              <span>{logArray.date.toLocaleDateString()}</span>
+            </div>
 
-          return (
-            <>
-              {dateElement}
+            {logArray.messages.map((log, index) => (
               <CounterLogItem
                 user={log.user}
                 type={log.type}
                 amount={log.amount}
                 subject={log.subject}
                 date={log.date}
+                key={`${log.type}_${index}`}
               />
-            </>
-          );
-        })}
+            ))}
+          </div>
+        ))}
         <div ref={ref} />
       </div>
     </div>

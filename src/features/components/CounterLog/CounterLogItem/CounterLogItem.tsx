@@ -1,10 +1,10 @@
 import React from 'react';
 import cn from 'classnames';
 import css from './CounterLogItem.module.scss';
-import { Log, LogTypeEnum } from '../../../../app/types';
+import { LogItem, LogTypeEnum } from '../../../../app/types';
 import { formatAmount, formatTime, getRandomColor } from '../../../../app/utils';
 
-const CounterLogItem: React.FC<Log> = ({ user, type, amount, subject, date }) => {
+const CounterLogItem: React.FC<LogItem> = ({ user, type, amount, subject, date }) => {
   const logText = React.useMemo(() => {
     switch (type) {
       case LogTypeEnum.AddAmount:
@@ -41,7 +41,7 @@ const CounterLogItem: React.FC<Log> = ({ user, type, amount, subject, date }) =>
     [css.content_red]: type === LogTypeEnum.SubstrAmount
   };
 
-  const isMine = user?.id === '3';
+  const isMine = user?.id === '1';
   const noAvatarBackground = getRandomColor();
 
   const positionClasses = {

@@ -1,6 +1,6 @@
 import {
   Counter,
-  Log,
+  Logs,
   LogTypeEnum,
   Notification,
   NotificationTypeEnum,
@@ -55,113 +55,66 @@ export const counters: Counter[] = [
   }
 ];
 
-export const logs: Log[] = [
+export const logs: Logs[] = [
   {
-    user: users[1],
-    type: LogTypeEnum.Accept,
-    date: new Date(2023, 8, 20, 2, 24, 3)
+    date: new Date(2023, 8, 20),
+    messages: [
+      {
+        user: users[1],
+        type: LogTypeEnum.Accept,
+        date: new Date(2023, 8, 20, 2, 24, 3)
+      },
+      {
+        user: users[1],
+        type: LogTypeEnum.Accept,
+        date: new Date(2023, 8, 20, 2, 24, 3)
+      },
+      {
+        user: users[1],
+        type: LogTypeEnum.Accept,
+        date: new Date(2023, 8, 20, 2, 24, 3)
+      }
+    ]
   },
   {
-    user: users[3],
-    type: LogTypeEnum.RemoveGoal,
-    date: new Date(2023, 8, 20, 2, 24, 2)
+    date: new Date(2023, 8, 21),
+    messages: [
+      {
+        user: users[1],
+        type: LogTypeEnum.Accept,
+        date: new Date(2023, 8, 20, 2, 24, 3)
+      },
+      {
+        user: users[1],
+        type: LogTypeEnum.Accept,
+        date: new Date(2023, 8, 20, 2, 24, 3)
+      },
+      {
+        user: users[1],
+        type: LogTypeEnum.Accept,
+        date: new Date(2023, 8, 20, 2, 24, 3)
+      }
+    ]
   },
   {
-    user: users[3],
-    type: LogTypeEnum.SetGoal,
-    date: new Date(2023, 8, 20, 2, 24, 1)
-  },
-  {
-    type: LogTypeEnum.ReachGoal,
-    date: new Date(2023, 1, 3, 2, 24, 1)
-  },
-  {
-    user: users[1],
-    type: LogTypeEnum.Kick,
-    subject: users[3],
-    date: new Date(2023, 1, 4, 2, 24, 1)
-  },
-  {
-    user: users[2],
-    type: LogTypeEnum.CreateInvitation,
-    date: new Date(2023, 1, 4, 2, 24, 1)
-  },
-  {
-    user: users[0],
-    type: LogTypeEnum.AddAmount,
-    amount: 15500,
-    date: new Date(2023, 1, 4, 3, 24, 2)
-  },
-  {
-    user: users[1],
-    type: LogTypeEnum.SubstrAmount,
-    amount: 2200,
-    date: new Date(2023, 8, 13, 3, 24, 4)
-  },
-  {
-    user: users[2],
-    type: LogTypeEnum.CreateInvitation,
-    date: new Date(2023, 8, 21, 3, 24, 5)
-  },
-  {
-    user: users[1],
-    type: LogTypeEnum.SubstrAmount,
-    amount: 200,
-    date: new Date(2023, 8, 12, 3, 24, 6)
-  },
-  {
-    user: users[1],
-    type: LogTypeEnum.SubstrAmount,
-    amount: 200,
-    date: new Date(2023, 8, 14, 3, 24, 7)
-  },
-  {
-    user: users[1],
-    type: LogTypeEnum.SubstrAmount,
-    amount: 200,
-    date: new Date(2023, 8, 14, 3, 24, 8)
-  },
-  {
-    user: users[0],
-    type: LogTypeEnum.AddAmount,
-    amount: 500,
-    date: new Date(2023, 1, 5, 3, 24, 9)
-  },
-  {
-    user: users[0],
-    type: LogTypeEnum.AddAmount,
-    amount: 500,
-    date: new Date(2023, 1, 5, 3, 24, 10)
-  },
-  {
-    user: users[0],
-    type: LogTypeEnum.AddAmount,
-    amount: 500,
-    date: new Date(2023, 1, 5, 3, 24, 11)
-  },
-  {
-    user: users[1],
-    type: LogTypeEnum.SubstrAmount,
-    amount: 200,
-    date: new Date(2023, 1, 6, 3, 24, 12)
-  },
-  {
-    user: users[1],
-    type: LogTypeEnum.SubstrAmount,
-    amount: 200,
-    date: new Date(2023, 1, 6, 3, 24, 13)
-  },
-  {
-    user: users[0],
-    type: LogTypeEnum.AddAmount,
-    amount: 500,
-    date: new Date(2023, 1, 6, 3, 24, 14)
-  },
-  {
-    user: users[0],
-    type: LogTypeEnum.AddAmount,
-    amount: 500,
-    date: new Date(2023, 1, 6, 3, 4, 15)
+    date: new Date(2023, 8, 23),
+    messages: [
+      {
+        user: users[1],
+        type: LogTypeEnum.Accept,
+        date: new Date(2023, 8, 20, 2, 24, 3)
+      },
+      {
+        user: users[1],
+        type: LogTypeEnum.Accept,
+        date: new Date(2023, 8, 20, 2, 24, 3)
+      },
+      {
+        user: users[1],
+        type: LogTypeEnum.Accept,
+        date: new Date(2023, 8, 20, 2, 24, 3)
+      }
+    ]
   }
 ];
 

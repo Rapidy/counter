@@ -26,12 +26,17 @@ export enum LogTypeEnum {
   RemoveGoal
 }
 
-export interface Log {
+export interface LogItem {
   user?: User;
   type: LogTypeEnum;
   amount?: number;
   subject?: User;
   date: Date;
+}
+
+export interface Logs {
+  date: Date;
+  messages: LogItem[];
 }
 
 export interface Goal {
