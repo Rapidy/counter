@@ -14,7 +14,7 @@ const Sidebar: React.FC<Props> = ({ counters }) => {
     <div className={css.wrapper}>
       <h2 className={css.title}>Ваши счетчики</h2>
 
-      <Button className={css.createCounter} onClick={() => null} color="secondary">
+      <Button className={css.createCounter} onClick={() => null} type="secondary">
         Создать счетчик
       </Button>
 

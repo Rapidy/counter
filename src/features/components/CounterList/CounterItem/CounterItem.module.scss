@@ -43,13 +43,10 @@ input.renameInput {
 
 .controls {
   display: flex;
-  margin-left: 7px;
 
   button.button {
-    color: #ffffff;
-    width: 30px;
-    height: 30px;
-    border-radius: $borderRadius;
+    background: none;
+    font-size: 15px;
 
     &:hover {
       background: $darkBg;

@@ -56,7 +56,7 @@ const Notification: React.FC<Props> = ({ newAmount, notifications, onView, onCle
               <Button
                 className={cn(css.popover__clear)}
                 onClick={onClear}
-                color="secondary"
+                type="secondary"
               >
                 Очистить уведомления
               </Button>

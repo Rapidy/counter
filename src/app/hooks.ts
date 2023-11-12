@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from './redux/store';
 
-type useToggleType = [boolean, () => void, React.Dispatch<React.SetStateAction<boolean>> ];
+type useToggleType = [boolean, () => void, React.Dispatch<React.SetStateAction<boolean>>];
 
 // Use throughout your app instead of plain `useDispatch` and `useSelector`
 export const useAppDispatch = () => useDispatch<AppDispatch>();

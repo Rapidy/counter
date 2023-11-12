@@ -29,7 +29,7 @@ function App() {
           path="counter/:id"
           element={
             <>
-              <UserList users={userList} listName="Счетчик" />
+              <UserList users={userList} />
               <CounterLog logs={counterLog} />
             </>
           }

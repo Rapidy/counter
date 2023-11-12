@@ -5,7 +5,7 @@ import { CounterListItem } from '../../../../app/types';
 
 import { faTrashCan, faPen } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Button from '../../../elements/Button/Button';
 
 interface Props {
   isActive: boolean;
@@ -73,12 +73,18 @@ const CounterItem: React.FC<Props & CounterListItem> = ({
           e.stopPropagation();
         }}
       >
-        <button className={css.button} onClick={() => setEditing(true)}>
-          <FontAwesomeIcon icon={faPen} />
-        </button>
-        <button className={css.button} onClick={() => onDeleteCounter(id)}>
-          <FontAwesomeIcon icon={faTrashCan} />
-        </button>
+        <Button
+          className={css.button}
+          onClick={() => setEditing(true)}
+          controlIcon={faPen}
+          type="control"
+        />
+        <Button
+          className={css.button}
+          onClick={() => onDeleteCounter(id)}
+          controlIcon={faTrashCan}
+          type="control"
+        />
       </div>
     </NavLink>
   );
