@@ -1,41 +1,64 @@
+@import '../../../variables';
+
 .wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 250px;
+  width: 300px;
+  background: #fff;
+  padding: 15px;
 
   &:not(:last-of-type) {
-    margin-bottom: 5px;
+    border-bottom: 1px solid $grey;
   }
 }
 
 .info {
   display: flex;
   align-items: center;
+
+  &__avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+
+    &_noAvatar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 500;
+      mix-blend-mode: difference;
+      color: #fff;
+    }
+  }
+
+  &__text {
+    margin-left: 10px;
+
+    .name {
+      &_owner {
+        svg path {
+          fill: darken($orange, 3%);
+        }
+      }
+    }
+
+    .totalAmount {
+      font-weight: 400;
+      margin-top: 2px;
+    }
+  }
 }
 
-.avatar {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  margin-right: 12px;
-}
+button.button_delete {
+  background: transparent;
+  color: $bg;
 
-.noAvatar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 500;
-  mix-blend-mode: difference;
-  color: #fff;
-}
+  &:hover {
+    background: $bg;
 
-.totalAmount {
-  margin-left: 12px;
-  font-weight: 400;
-}
-
-button.deleteButton {
-  background: #000;
-  color: #fff;
+    svg path {
+      fill: #fff;
+    }
+  }
 }

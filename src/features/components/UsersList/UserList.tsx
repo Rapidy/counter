@@ -8,10 +8,9 @@ import UserItem from './UserItem/UserItem';
 
 interface Props {
   users: User[];
-  listName: string;
 }
 
-const UserList: React.FC<Props> = ({ users, listName }) => {
+const UserList: React.FC<Props> = ({ users }) => {
   const dispatch = useAppDispatch();
 
   const authorId = '1';
@@ -25,7 +24,6 @@ const UserList: React.FC<Props> = ({ users, listName }) => {
 
   return (
     <div>
-      <h3>{listName}</h3>
       {sortedUserList.map((user) => (
         <UserItem
           key={user.id}
@@ -35,6 +33,7 @@ const UserList: React.FC<Props> = ({ users, listName }) => {
           totalAmount={user.totalAmount}
           onDeleteUser={handleDeleteUser}
           noAvatarBackground={randomAvatarBackground}
+          isOwner={authorId === user.id}
         />
       ))}
     </div>
