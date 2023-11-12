@@ -23,13 +23,13 @@ const CounterLogItem: React.FC<LogItem> = ({ user, type, amount, subject, date }
         return `Удалил пользователя ${subject?.name}`;
 
       case LogTypeEnum.SetGoal:
-        return `Установил цель`;
+        return `Установил цель "${formatAmount(amount)}"`;
 
       case LogTypeEnum.ReachGoal:
-        return `Вы достигли цели`;
+        return `Вы достигли цели "${formatAmount(amount)}"`;
 
       case LogTypeEnum.RemoveGoal:
-        return `Удалил цель`;
+        return `Удалил цель "${formatAmount(amount)}"`;
 
       default:
         return '';

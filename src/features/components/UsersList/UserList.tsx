@@ -1,4 +1,6 @@
 import React from 'react';
+import css from './UserList.module.scss';
+
 import { User } from '../../../app/types';
 import { getRandomColor } from '../../../app/utils';
 import { useAppDispatch } from '../../../app/hooks';
@@ -23,7 +25,7 @@ const UserList: React.FC<Props> = ({ users }) => {
   const sortedUserList = [...users].sort((a, b) => b.totalAmount - a.totalAmount);
 
   return (
-    <div>
+    <div className={css.wrapper}>
       {sortedUserList.map((user) => (
         <UserItem
           key={user.id}
