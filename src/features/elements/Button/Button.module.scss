@@ -1,6 +1,6 @@
 @import '../../variables';
 
-button.button {
+.button {
   padding: 15px 23px;
   color: #fff;
   background: $accent;
@@ -26,5 +26,13 @@ button.button {
     &:active {
       background: darken($bg, 7%);
     }
+  }
+
+  &.control {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
   }
 }
