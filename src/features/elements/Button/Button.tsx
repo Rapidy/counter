@@ -2,22 +2,34 @@ import React from 'react';
 import css from './Button.module.scss';
 import cn from 'classnames';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+
 interface Props {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   onClick: () => any;
   className?: string;
-  color?: 'secondary' | 'primary';
+  type?: 'secondary' | 'primary' | 'control';
+  controlIcon?: IconProp;
 }
 
-const Button: React.FC<Props> = ({ children, className, onClick, color = 'primary' }) => {
+const Button: React.FC<Props> = ({
+  children,
+  className,
+  onClick,
+  type = 'primary',
+  controlIcon = faTrashCan
+}) => {
   return (
     <button
       className={cn(css.button, className, {
-        [css.secondary]: color === 'secondary'
+        [css.secondary]: type === 'secondary',
+        [css.control]: type === 'control'
       })}
       onClick={onClick}
     >
-      {children}
+      {children} {type === 'control' && <FontAwesomeIcon icon={controlIcon} />}
     </button>
   );
 };

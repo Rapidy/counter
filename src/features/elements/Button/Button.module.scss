@@ -1,10 +1,10 @@
-@import "../../variables";
+@import '../../variables';
 
-button.button {
+.button {
   padding: 15px 23px;
   color: #fff;
   background: $accent;
-  border-radius: 5px;
+  border-radius: $borderRadius;
   font-size: 16px;
   display: flex;
 
@@ -26,5 +26,13 @@ button.button {
     &:active {
       background: darken($bg, 7%);
     }
+  }
+
+  &.control {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
   }
 }

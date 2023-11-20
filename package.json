@@ -1,6 +1,6 @@
 {
   "name": "counter",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -35,7 +35,8 @@
     "prettier": "prettier --config \"src/.prettierrc\" \"src/**/*.{ts,tsx}\" --write",
     "lint": "tslint 'src/**/*.{ts,tsx,js}'",
     "stylelint": "stylelint **.scss",
-    "precommit": "npx lint-staged && tsc --noEmit"
+    "precommit": "npx lint-staged && tsc --noEmit",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [

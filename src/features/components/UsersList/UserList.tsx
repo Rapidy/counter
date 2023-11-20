@@ -1,4 +1,6 @@
 import React from 'react';
+import css from './UserList.module.scss';
+
 import { User } from '../../../app/types';
 import { getRandomColor } from '../../../app/utils';
 import { useAppDispatch } from '../../../app/hooks';
@@ -8,10 +10,9 @@ import UserItem from './UserItem/UserItem';
 
 interface Props {
   users: User[];
-  listName: string;
 }
 
-const UserList: React.FC<Props> = ({ users, listName }) => {
+const UserList: React.FC<Props> = ({ users }) => {
   const dispatch = useAppDispatch();
 
   const authorId = '1';
@@ -24,8 +25,7 @@ const UserList: React.FC<Props> = ({ users, listName }) => {
   const sortedUserList = [...users].sort((a, b) => b.totalAmount - a.totalAmount);
 
   return (
-    <div>
-      <h3>{listName}</h3>
+    <div className={css.wrapper}>
       {sortedUserList.map((user) => (
         <UserItem
           key={user.id}
@@ -35,6 +35,7 @@ const UserList: React.FC<Props> = ({ users, listName }) => {
           totalAmount={user.totalAmount}
           onDeleteUser={handleDeleteUser}
           noAvatarBackground={randomAvatarBackground}
+          isOwner={authorId === user.id}
         />
       ))}
     </div>

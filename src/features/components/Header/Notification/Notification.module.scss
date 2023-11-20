@@ -48,9 +48,92 @@
 .popover {
   margin-top: 12px;
 
+  &__header {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  button.popover__clear {
+    padding: 7px 12px;
+    font-size: 14px;
+    background: rgba($bg, 0.1);
+    color: darken($bg, 15%);
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
   &__content {
     width: 500px;
-    padding: 17px;
+    max-height: 425px;
+    overflow-y: auto;
+  }
+
+  &__item {
+    padding: 17px 27px 17px 12px;
+    cursor: pointer;
+    border-left: 7px solid transparent;
+    position: relative;
+
+    &_system {
+      border-color: $orange;
+    }
+
+    &_kick {
+      border-color: darken($accent, 10%);
+    }
+
+    &_invitation {
+      border-color: $green;
+    }
+
+    &_goal {
+      border-color: $bg;
+    }
+
+    &:not(&_isViewed) {
+      &:after {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        background: $bg;
+        width: 6px;
+        height: 6px;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    &_isViewed {
+      opacity: 0.6;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    &:hover {
+      background: $lightBg;
+    }
+  }
+
+  &__error {
+    display: block;
+    padding: 20px;
+  }
+}
+
+.item {
+  &__title {
+    font-weight: 400;
+    margin-bottom: 5px;
+  }
+
+  &__description {
+    font-size: 15px;
   }
 }
 

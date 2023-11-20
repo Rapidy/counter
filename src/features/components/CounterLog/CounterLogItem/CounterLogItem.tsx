@@ -1,58 +1,58 @@
 import React from 'react';
 import cn from 'classnames';
 import css from './CounterLogItem.module.scss';
-import { Log, logType } from '../../../../app/types';
-import { formatTime, getRandomColor } from '../../../../app/utils';
+import { LogItem, LogTypeEnum } from '../../../../app/types';
+import { formatAmount, formatTime, getRandomColor } from '../../../../app/utils';
 
-const CounterLogItem: React.FC<Log> = ({ user, type, amount, subject, date }) => {
-  const [text] = React.useState<string>(() => {
+const CounterLogItem: React.FC<LogItem> = ({ user, type, amount, subject, date }) => {
+  const logText = React.useMemo(() => {
     switch (type) {
-      case logType.AddAmount:
-        return `Прибавил +${amount}`;
+      case LogTypeEnum.AddAmount:
+        return `Прибавил ${formatAmount(amount)}`;
 
-      case logType.SubstrAmount:
-        return `Отнял -${amount}`;
+      case LogTypeEnum.SubstrAmount:
+        return `Отнял ${formatAmount(amount)}`;
 
-      case logType.CreateInvitation:
+      case LogTypeEnum.CreateInvitation:
         return `Создал приглашение`;
 
-      case logType.Accept:
+      case LogTypeEnum.Accept:
         return `Принял приглашение`;
 
-      case logType.Kick:
+      case LogTypeEnum.Kick:
         return `Удалил пользователя ${subject?.name}`;
 
-      case logType.SetGoal:
-        return `Установил цель`;
+      case LogTypeEnum.SetGoal:
+        return `Установил цель "${formatAmount(amount)}"`;
 
-      case logType.ReachGoal:
-        return `Вы достигли цели`;
+      case LogTypeEnum.ReachGoal:
+        return `Вы достигли цели "${formatAmount(amount)}"`;
 
-      case logType.RemoveGoal:
-        return `Удалил цель`;
+      case LogTypeEnum.RemoveGoal:
+        return `Удалил цель "${formatAmount(amount)}"`;
 
       default:
         return '';
     }
-  });
+  }, [type, amount, subject]);
 
   const typeClasses = {
-    [css.content_green]: type === logType.AddAmount,
-    [css.content_red]: type === logType.SubstrAmount
+    [css.content_green]: type === LogTypeEnum.AddAmount,
+    [css.content_red]: type === LogTypeEnum.SubstrAmount
   };
 
-  const isMine: boolean = user?.id === '3';
+  const isMine = user?.id === '1';
   const noAvatarBackground = getRandomColor();
 
   const positionClasses = {
     [css.log_right]: isMine,
-    [css.log_center]: type === logType.ReachGoal
+    [css.log_center]: type === LogTypeEnum.ReachGoal
   };
 
   return (
     <div className={cn(css.log, positionClasses)}>
       <div className={css.wrapper}>
-        {!isMine && type !== logType.ReachGoal && (
+        {!isMine && type !== LogTypeEnum.ReachGoal && (
           <div>
             {!!user?.avatarUrl ? (
               <img className={css.avatar} src={user?.avatarUrl} alt={user?.name} />
@@ -67,10 +67,10 @@ const CounterLogItem: React.FC<Log> = ({ user, type, amount, subject, date }) =>
           </div>
         )}
         <div className={cn(css.content, typeClasses)}>
-          {!isMine && type !== logType.ReachGoal && (
+          {!isMine && type !== LogTypeEnum.ReachGoal && (
             <div className={css.username}>{user?.name}</div>
           )}
-          {text}
+          {logText}
           <div className={css.date}>
             <span className={css.time}>{formatTime(date)}</span>
           </div>

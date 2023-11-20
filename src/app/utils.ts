@@ -9,11 +9,12 @@ export const getRandomColor = () => {
   return color;
 };
 
-export const formatAmount = (amount: number) => {
-  let str = `${amount}`.replace(/[^0-9]/g, '');
-  str = str.replace(/(?:(^\d{1,3})(?=(?:\d{3})*$)|(\d{3}))(?!$)/gm, '$1$2.');
+export const formatAmount = (amount: number = 0) => {
+  const formattedAmount = `${amount}`
+    .replace(/[^0-9]/g, '')
+    .replace(/(?:(^\d{1,3})(?=(?:\d{3})*$)|(\d{3}))(?!$)/gm, '$1$2.');
 
-  return `${amount <= -1 ? '-' : ''}${str}`;
+  return `${amount <= -1 ? '-' : ''}${formattedAmount}`;
 };
 
 export const formatTime = (date: Date): string => {

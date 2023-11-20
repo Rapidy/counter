@@ -15,7 +15,7 @@ export interface Counter {
 
 export type CounterListItem = Pick<Counter, 'id' | 'name'>;
 
-export enum logType {
+export enum LogTypeEnum {
   AddAmount,
   SubstrAmount,
   CreateInvitation,
@@ -26,12 +26,17 @@ export enum logType {
   RemoveGoal
 }
 
-export interface Log {
+export interface LogItem {
   user?: User;
-  type: logType;
+  type: LogTypeEnum;
   amount?: number;
   subject?: User;
   date: Date;
+}
+
+export interface Logs {
+  date: Date;
+  messages: LogItem[];
 }
 
 export interface Goal {
@@ -39,9 +44,17 @@ export interface Goal {
   goalAmount: number;
 }
 
+export enum NotificationTypeEnum {
+  SystemInformation = 'SystemInformation',
+  Invitation = 'Invitation',
+  Kick = 'Kick',
+  ReachGoal = 'ReachGoal'
+}
+
 export interface Notification {
   id: string;
   title: string;
   description: string;
   isViewed: boolean;
+  type: NotificationTypeEnum;
 }

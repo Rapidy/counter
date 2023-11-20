@@ -4,6 +4,11 @@ import { Goal, Notification } from '../../../app/types';
 
 import GoalComponent from './Goal/Goal';
 import NotificationComponent from './Notification/Notification';
+import { useAppDispatch } from '../../../app/hooks';
+import {
+  clearNotifications,
+  viewNotifications
+} from '../../../app/redux/slices/notificationSlice';
 
 interface Props {
   title?: string;
@@ -12,15 +17,25 @@ interface Props {
 }
 
 const Header: React.FC<Props> = ({ title, goal, notifications }) => {
-  const [newNotificationsAmount, setNewNotificationsAmount] = React.useState<number>(0);
+  const [newNotifications, setNewNotifications] = React.useState<Notification[]>([]);
+
+  const dispatch = useAppDispatch();
 
   React.useEffect(() => {
-    setNewNotificationsAmount(
+    setNewNotifications(
       notifications?.length
-        ? notifications.filter((notification) => !notification.isViewed).length
-        : 0
+        ? notifications.filter((notification) => !notification.isViewed)
+        : []
     );
   }, [notifications]);
+
+  const onViewNotification = () => {
+    dispatch(viewNotifications());
+  };
+
+  const onClearNotifications = () => {
+    dispatch(clearNotifications());
+  };
 
   return (
     <header className={css.wrapper}>
@@ -35,8 +50,10 @@ const Header: React.FC<Props> = ({ title, goal, notifications }) => {
 
         <div className={css.menu}>
           <NotificationComponent
-            newAmount={newNotificationsAmount}
+            newAmount={newNotifications.length}
             notifications={notifications}
+            onView={onViewNotification}
+            onClear={onClearNotifications}
           />
         </div>
       </div>

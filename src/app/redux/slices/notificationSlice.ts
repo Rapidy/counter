@@ -13,23 +13,14 @@ export const notificationSlice = createSlice({
     setNotifications: (state, action: PayloadAction<Notification[]>) => {
       state.notifications = action.payload;
     },
-    viewNotification: (state, action: PayloadAction<string>) => {
-      const currentNotification = state.notifications.find(
-        (notification) => notification.id === action.payload
-      );
+    viewNotifications: (state) => {
+      state.notifications = state.notifications.map((notification) => {
+        if (!notification.isViewed) {
+          return { ...notification, isViewed: true };
+        }
 
-      if (currentNotification) {
-        state.notifications = [
-          ...state.notifications,
-          { ...currentNotification, isViewed: true }
-        ];
-      }
-    },
-    viewAllNotifications: (state) => {
-      state.notifications = state.notifications.map((notification) => ({
-        ...notification,
-        isViewed: true
-      }));
+        return notification;
+      });
     },
     clearNotifications: (state) => {
       state.notifications = [];
@@ -37,12 +28,8 @@ export const notificationSlice = createSlice({
   }
 });
 
-export const {
-  setNotifications,
-  viewNotification,
-  viewAllNotifications,
-  clearNotifications
-} = notificationSlice.actions;
+export const { setNotifications, viewNotifications, clearNotifications } =
+  notificationSlice.actions;
 
 export const getNotifications = (state: RootState) => state.notification.notifications;
 
