@@ -33,6 +33,42 @@ export const users: User[] = [
     name: 'Durak',
     avatarUrl: '',
     totalAmount: 1100
+  },
+  {
+    id: '5',
+    name: 'Louis',
+    avatarUrl: '',
+    totalAmount: 1800
+  },
+  {
+    id: '6',
+    name: 'Travis',
+    avatarUrl: '',
+    totalAmount: 200
+  },
+  {
+    id: '7',
+    name: 'Lenny',
+    avatarUrl: '',
+    totalAmount: 2100
+  },
+  {
+    id: '8',
+    name: 'John',
+    avatarUrl: '',
+    totalAmount: 1250
+  },
+  {
+    id: '9',
+    name: 'Odin',
+    avatarUrl: '',
+    totalAmount: 1250
+  },
+  {
+    id: '10',
+    name: 'Ron',
+    avatarUrl: '',
+    totalAmount: 1250
   }
 ];
 
