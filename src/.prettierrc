@@ -2,5 +2,15 @@
   "semi": true,
   "trailingComma": "none",
   "singleQuote": true,
-  "printWidth": 90
+  "printWidth": 90,
+  "plugins": ["@trivago/prettier-plugin-sort-imports"],
+  "importOrder": [
+    "react*",
+    "./*.module.scss",
+    "./app/*",
+    "<THIRD_PARTY_MODULES>",
+    "./features/components/*"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
 }
