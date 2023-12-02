@@ -1,10 +1,12 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+
 import css from './Goal.module.scss';
-import cn from 'classnames';
 
 import { formatAmount, getPercentage } from '../../../../app/utils';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import { faTrophy } from '@fortawesome/free-solid-svg-icons';
+import cn from 'classnames';
 
 interface Props {
   title?: string;

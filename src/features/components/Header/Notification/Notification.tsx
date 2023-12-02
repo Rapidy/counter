@@ -1,16 +1,18 @@
-import React from 'react';
-import css from './Notification.module.scss';
-import cn from 'classnames';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBell } from '@fortawesome/free-regular-svg-icons';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import React from 'react';
+
+import css from './Notification.module.scss';
+
 import {
   Notification as NotificationType,
   NotificationTypeEnum
 } from '../../../../app/types';
-import { Popover } from '@mui/material';
+
 import Button from '../../../elements/Button/Button';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { faBell } from '@fortawesome/free-regular-svg-icons';
+import { Popover } from '@mui/material';
+import cn from 'classnames';
 
 interface Props {
   newAmount: number;

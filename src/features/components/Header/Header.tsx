@@ -1,14 +1,16 @@
 import React from 'react';
-import css from './Header.module.scss';
-import { Goal, Notification } from '../../../app/types';
 
-import GoalComponent from './Goal/Goal';
-import NotificationComponent from './Notification/Notification';
+import css from './Header.module.scss';
+
 import { useAppDispatch } from '../../../app/hooks';
 import {
   clearNotifications,
   viewNotifications
 } from '../../../app/redux/slices/notificationSlice';
+import { Goal, Notification } from '../../../app/types';
+
+import GoalComponent from './Goal/Goal';
+import NotificationComponent from './Notification/Notification';
 
 interface Props {
   title?: string;

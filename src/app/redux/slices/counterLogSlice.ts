@@ -1,8 +1,7 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Logs, User } from '../../types';
 import { RootState } from '../store';
-
 import { removeUser } from './userSlice';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   logs: [] as Logs[],

@@ -1,6 +1,6 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Notification } from '../../types';
 import { RootState } from '../store';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   notifications: [] as Notification[]

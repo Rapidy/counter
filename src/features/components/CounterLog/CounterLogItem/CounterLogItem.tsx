@@ -1,8 +1,11 @@
 import React from 'react';
-import cn from 'classnames';
+
 import css from './CounterLogItem.module.scss';
+
 import { LogItem, LogTypeEnum } from '../../../../app/types';
 import { formatAmount, formatTime, getRandomColor } from '../../../../app/utils';
+
+import cn from 'classnames';
 
 const CounterLogItem: React.FC<LogItem> = ({ user, type, amount, subject, date }) => {
   const logText = React.useMemo(() => {

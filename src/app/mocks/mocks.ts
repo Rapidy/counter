@@ -1,7 +1,7 @@
 import {
   Counter,
-  Logs,
   LogTypeEnum,
+  Logs,
   Notification,
   NotificationTypeEnum,
   User

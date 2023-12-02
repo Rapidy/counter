@@ -1,5 +1,7 @@
 import React from 'react';
+
 import css from './CounterLog.module.scss';
+
 import { Logs } from '../../../app/types';
 
 import CounterLogItem from './CounterLogItem/CounterLogItem';

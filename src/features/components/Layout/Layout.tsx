@@ -1,17 +1,18 @@
 import React from 'react';
-import css from './Layout.module.scss';
 import { Outlet, useParams } from 'react-router-dom';
-import { counters, notifications } from '../../../app/mocks/mocks';
 
+import css from './Layout.module.scss';
+
+import { useAppDispatch, useAppSelector } from '../../../app/hooks';
+import { counters, notifications } from '../../../app/mocks/mocks';
 import { getCounters, setCounters } from '../../../app/redux/slices/counterSlice';
 import {
   getNotifications,
   setNotifications
 } from '../../../app/redux/slices/notificationSlice';
-import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 
-import Sidebar from '../Sidebar/Sidebar';
 import Header from '../Header/Header';
+import Sidebar from '../Sidebar/Sidebar';
 
 const Layout: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -30,6 +31,7 @@ const Layout: React.FC = () => {
     <div className={css.root}>
       <div className={css.container}>
         <Sidebar counters={counterList} />
+
         <div className={css.wrapper}>
           <Header
             title={activeCounter?.name}

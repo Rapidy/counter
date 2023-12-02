@@ -1,9 +1,8 @@
 import React from 'react';
+
 import css from './Authorization.module.css';
 
-interface Props {}
-
-const Authorization: React.FC<Props> = (props) => {
+const Authorization: React.FC = (props) => {
   const [isRegistered, setIsRegistered] = React.useState(false);
 
   const onAuth = () => {

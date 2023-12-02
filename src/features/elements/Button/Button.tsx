@@ -1,10 +1,11 @@
-import React from 'react';
-import css from './Button.module.scss';
-import cn from 'classnames';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import React from 'react';
+
+import css from './Button.module.scss';
+
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import cn from 'classnames';
 
 interface Props {
   children?: React.ReactNode;

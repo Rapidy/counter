@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+
 import css from './CounterItem.module.scss';
-import cn from 'classnames';
+
 import { CounterListItem } from '../../../../app/types';
 
-import { faTrashCan, faPen } from '@fortawesome/free-solid-svg-icons';
-import { NavLink } from 'react-router-dom';
 import Button from '../../../elements/Button/Button';
+import { faPen, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import cn from 'classnames';
 
 interface Props {
   isActive: boolean;

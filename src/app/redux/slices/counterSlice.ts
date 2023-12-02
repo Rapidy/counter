@@ -1,6 +1,21 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Counter, CounterListItem } from '../../types';
+import { Counter, CounterListItem, LocalStorageEnum } from '../../types';
 import { RootState } from '../store';
+import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
+import Cookie from 'js-cookie';
+
+export const fetchCounters = createAsyncThunk(
+  'counter/fetchCounters',
+  async (_, thunkAPI) => {
+    return axios
+      .post('https://pleasant-fish-fez.cyclic.app/api/auth/login', {
+        username: 'Minimum',
+        password: '111111111'
+      })
+      .then((response) => response.data.token)
+      .catch((error) => thunkAPI.rejectWithValue(error.message));
+  }
+);
 
 const initialState = {
   counters: [] as Counter[]
@@ -24,6 +39,10 @@ export const counterSlice = createSlice({
         return counter;
       });
     }
+  },
+  extraReducers: (builder) => {
+    builder.addCase(fetchCounters.fulfilled, (state, action) => {});
+    builder.addCase(fetchCounters.rejected, (state, action) => {});
   }
 });
 

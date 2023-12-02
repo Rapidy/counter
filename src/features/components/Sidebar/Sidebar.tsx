@@ -1,5 +1,7 @@
 import React from 'react';
+
 import css from './Sidebar.module.scss';
+
 import { Counter } from '../../../app/types';
 
 import Button from '../../elements/Button/Button';

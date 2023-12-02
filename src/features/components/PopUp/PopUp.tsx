@@ -1,6 +1,8 @@
-import React from 'react';
-import css from './PopUp.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react';
+
+import css from './PopUp.module.scss';
+
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 interface Props {

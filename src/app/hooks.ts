@@ -1,6 +1,7 @@
 import React from 'react';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-import type { RootState, AppDispatch } from './redux/store';
+
+import type { AppDispatch, RootState } from './redux/store';
 
 type useToggleType = [boolean, () => void, React.Dispatch<React.SetStateAction<boolean>>];
 

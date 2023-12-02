@@ -1,8 +1,8 @@
-import { Action, configureStore, ThunkAction } from '@reduxjs/toolkit';
-import counterReducer from './slices/counterSlice';
-import userReducer from './slices/userSlice';
 import counterLogReducer from './slices/counterLogSlice';
+import counterReducer from './slices/counterSlice';
 import notificationReducer from './slices/notificationSlice';
+import userReducer from './slices/userSlice';
+import { Action, ThunkAction, configureStore } from '@reduxjs/toolkit';
 
 export const store = configureStore({
   reducer: {
