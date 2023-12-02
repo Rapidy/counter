@@ -1,15 +1,17 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { User } from '../../../../app/types';
+
 import css from './UserItem.module.scss';
+
+import { User } from '../../../../app/types';
+import { formatAmount } from '../../../../app/utils';
+
+import Button from '../../../elements/Button/Button';
+import { faCrown } from '@fortawesome/free-solid-svg-icons';
 import cn from 'classnames';
 
-import { formatAmount } from '../../../../app/utils';
-import { faCrown } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Button from '../../../elements/Button/Button';
-
 interface Props {
-  noAvatarBackground: string;
+  noAvatarBackground?: string;
   isOwner: boolean;
   onDeleteUser: (id: string) => void;
 }

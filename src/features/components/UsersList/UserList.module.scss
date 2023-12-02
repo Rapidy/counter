@@ -4,4 +4,26 @@
   height: 100%;
   overflow: hidden auto;
   border: 1px solid $grey;
+
+  .input {
+    background: #fff;
+
+    &::after {
+      border-color: $bg;
+    }
+
+    &::before {
+      border-bottom: 1px solid $grey;
+    }
+
+    &_focused {
+      background: rgba($grey, 0.1);
+    }
+  }
+
+  label.label {
+    &_focused {
+      color: $darkBg;
+    }
+  }
 }
