@@ -58,3 +58,8 @@ export interface Notification {
   isViewed: boolean;
   type: NotificationTypeEnum;
 }
+
+export enum LocalStorageEnum {
+  ACTIVE_COUNTER_ID = 'ACTIVE_COUNTER_ID',
+  TOKEN_ID = 'TOKEN_ID'
+}

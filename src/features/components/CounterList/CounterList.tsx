@@ -1,9 +1,11 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
+
 import css from './CounterList.module.scss';
-import { CounterListItem } from '../../../app/types';
+
 import { useAppDispatch } from '../../../app/hooks';
 import { removeCounter, renameCounter } from '../../../app/redux/slices/counterSlice';
-import { useParams } from 'react-router-dom';
+import { CounterListItem, LocalStorageEnum } from '../../../app/types';
 
 import CounterItem from './CounterItem/CounterItem';
 
@@ -14,7 +16,8 @@ interface Props {
 const CounterList: React.FC<Props> = ({ counters }) => {
   const dispatch = useAppDispatch();
   const { id } = useParams();
-  const [activeCounter, setActiveCounter] = React.useState<string | undefined>('');
+
+  const [activeCounter, setActiveCounter] = React.useState<string | undefined | null>();
 
   const handleDeleteCounter = (id: string) => {
     dispatch(removeCounter(id));
@@ -26,6 +29,7 @@ const CounterList: React.FC<Props> = ({ counters }) => {
 
   const handleClickCounter = (id: string) => {
     setActiveCounter(id);
+    localStorage.setItem(LocalStorageEnum.ACTIVE_COUNTER_ID, id);
   };
 
   React.useEffect(() => {
