@@ -8,6 +8,7 @@ import { fetchCounters } from './app/redux/slices/counterSlice';
 import { getUsers, setUsers } from './app/redux/slices/userSlice';
 import { LocalStorageEnum } from './app/types';
 
+import Authorization from './features/components/Authorization/Authorization';
 import CounterLog from './features/components/CounterLog/CounterLog';
 import Layout from './features/components/Layout/Layout';
 import UserList from './features/components/UsersList/UserList';
@@ -46,14 +47,7 @@ function App() {
             </>
           }
         />
-        <Route
-          path="*"
-          element={
-            <>
-              <div>Ты не туда попал</div>
-            </>
-          }
-        />
+        <Route path="*" element={<Authorization />} />
       </Route>
     </Routes>
   );

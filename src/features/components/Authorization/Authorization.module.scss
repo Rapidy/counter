@@ -1,0 +1,13 @@
+.wrapper {
+  .form {
+    &__item {
+      background: grey;
+      padding: 10px;
+      color: gold;
+
+      &::placeholder {
+        color: #ffffff;
+      }
+    }
+  }
+}
